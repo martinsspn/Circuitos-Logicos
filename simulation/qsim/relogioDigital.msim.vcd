@@ -1,0 +1,161 @@
+$comment
+	File created using the following command:
+		vcd file relogioDigital.msim.vcd -direction
+$end
+$date
+	Thu Oct 17 07:57:41 2019
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module demux_4x8_vhd_vec_tst $end
+$var wire 1 ! E [3] $end
+$var wire 1 " E [2] $end
+$var wire 1 # E [1] $end
+$var wire 1 $ E [0] $end
+$var wire 1 % S1 [3] $end
+$var wire 1 & S1 [2] $end
+$var wire 1 ' S1 [1] $end
+$var wire 1 ( S1 [0] $end
+$var wire 1 ) S2 [3] $end
+$var wire 1 * S2 [2] $end
+$var wire 1 + S2 [1] $end
+$var wire 1 , S2 [0] $end
+$var wire 1 - sel $end
+
+$scope module i1 $end
+$var wire 1 . gnd $end
+$var wire 1 / vcc $end
+$var wire 1 0 unknown $end
+$var wire 1 1 devoe $end
+$var wire 1 2 devclrn $end
+$var wire 1 3 devpor $end
+$var wire 1 4 ww_devoe $end
+$var wire 1 5 ww_devclrn $end
+$var wire 1 6 ww_devpor $end
+$var wire 1 7 ww_E [3] $end
+$var wire 1 8 ww_E [2] $end
+$var wire 1 9 ww_E [1] $end
+$var wire 1 : ww_E [0] $end
+$var wire 1 ; ww_sel $end
+$var wire 1 < ww_S1 [3] $end
+$var wire 1 = ww_S1 [2] $end
+$var wire 1 > ww_S1 [1] $end
+$var wire 1 ? ww_S1 [0] $end
+$var wire 1 @ ww_S2 [3] $end
+$var wire 1 A ww_S2 [2] $end
+$var wire 1 B ww_S2 [1] $end
+$var wire 1 C ww_S2 [0] $end
+$var wire 1 D \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 E \sel~input_o\ $end
+$var wire 1 F \E[0]~input_o\ $end
+$var wire 1 G \S1~0_combout\ $end
+$var wire 1 H \E[1]~input_o\ $end
+$var wire 1 I \S1~1_combout\ $end
+$var wire 1 J \E[2]~input_o\ $end
+$var wire 1 K \S1~2_combout\ $end
+$var wire 1 L \E[3]~input_o\ $end
+$var wire 1 M \S1~3_combout\ $end
+$var wire 1 N \S2~0_combout\ $end
+$var wire 1 O \S2~1_combout\ $end
+$var wire 1 P \S2~2_combout\ $end
+$var wire 1 Q \S2~3_combout\ $end
+$var wire 1 R \ALT_INV_E[3]~input_o\ $end
+$var wire 1 S \ALT_INV_E[2]~input_o\ $end
+$var wire 1 T \ALT_INV_E[1]~input_o\ $end
+$var wire 1 U \ALT_INV_sel~input_o\ $end
+$var wire 1 V \ALT_INV_E[0]~input_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0-
+0.
+1/
+x0
+11
+12
+13
+14
+15
+16
+0;
+xD
+0E
+1F
+1G
+1H
+1I
+1J
+1K
+1L
+1M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+1U
+0V
+1!
+1"
+1#
+1$
+1%
+1&
+1'
+1(
+0)
+0*
+0+
+0,
+17
+18
+19
+1:
+1<
+1=
+1>
+1?
+0@
+0A
+0B
+0C
+$end
+#5000
+1-
+1;
+1E
+0U
+0G
+0I
+0K
+0M
+1N
+1O
+1P
+1Q
+1@
+1A
+1B
+1C
+0<
+0=
+0>
+0?
+1,
+1+
+1*
+1)
+0(
+0'
+0&
+0%
+#10000

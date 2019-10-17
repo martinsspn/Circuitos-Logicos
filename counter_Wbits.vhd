@@ -2,14 +2,12 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 ENTITY counter_Wbits IS
-GENERIC(W : NATURAL := 4);
-PORT (d
-: IN STD_LOGIC_VECTOR(W-1 DOWNTO 0);-- data input
+PORT (d: IN STD_LOGIC_VECTOR(3 DOWNTO 0);-- data input
 clk : IN BIT; -- clock
 clrn: IN BIT; -- clear
 ena : IN BIT; -- enable
 load: IN BIT; -- load
-q : BUFFER STD_LOGIC_VECTOR(W-1 DOWNTO 0));-- data output
+q : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));-- data output
 END counter_Wbits;
 ARCHITECTURE arch_1 OF counter_Wbits IS
 BEGIN
