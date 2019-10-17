@@ -1,0 +1,27 @@
+|counter_Wbits
+d[0] => q.DATAB
+d[1] => q.DATAB
+d[2] => q.DATAB
+d[3] => q.DATAB
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+clrn => q[0]~reg0.ACLR
+clrn => q[1]~reg0.ACLR
+clrn => q[2]~reg0.ACLR
+clrn => q[3]~reg0.ACLR
+ena => q[3]~reg0.ENA
+ena => q[2]~reg0.ENA
+ena => q[1]~reg0.ENA
+ena => q[0]~reg0.ENA
+load => q.OUTPUTSELECT
+load => q.OUTPUTSELECT
+load => q.OUTPUTSELECT
+load => q.OUTPUTSELECT
+q[0] << q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] << q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] << q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] << q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
