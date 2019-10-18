@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RelogioDigital
-Fri Oct 18 19:55:12 2019
+Fri Oct 18 20:50:21 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +39,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Oct 18 19:55:12 2019           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; RelogioDigital                              ;
-; Top-level Entity Name       ; controladorCounter                          ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 18 20:50:21 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; RelogioDigital                              ;
+; Top-level Entity Name           ; counter_Wbits                               ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 4                                           ;
+; Total pins                      ; 12                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +68,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; controladorCounter ; RelogioDigital     ;
+; Top-level entity name                                                           ; counter_Wbits      ; RelogioDigital     ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -147,11 +158,102 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; counter_Wbits.vhd                ; yes             ; User VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/counter_Wbits.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 3         ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 4         ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 1         ;
+;     -- 5 input functions                    ; 1         ;
+;     -- 4 input functions                    ; 1         ;
+;     -- <=3 input functions                  ; 1         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 4         ;
+;                                             ;           ;
+; I/O pins                                    ; 12        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; q[0]~reg0 ;
+; Maximum fan-out                             ; 5         ;
+; Total fan-out                               ; 50        ;
+; Average fan-out                             ; 1.56      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; |counter_Wbits             ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 12   ; 0            ; |counter_Wbits      ; counter_Wbits ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 4                           ;
+;     ENA CLR           ; 4                           ;
+; arriav_lcell_comb     ; 4                           ;
+;     normal            ; 4                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 1                           ;
+; boundary_port         ; 12                          ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.81                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -160,7 +262,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Oct 18 19:55:01 2019
+    Info: Processing started: Fri Oct 18 20:50:07 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RelogioDigital -c RelogioDigital
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -169,14 +271,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file counter
     Info (12022): Found design unit 1: counter_Wbits-arch_1 File: /home/martinsspn/Documentos/Circuitos-Logicos/counter_Wbits.vhd Line: 12
     Info (12023): Found entity 1: counter_Wbits File: /home/martinsspn/Documentos/Circuitos-Logicos/counter_Wbits.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file RelogioDigital.vhd
-    Info (12022): Found design unit 1: RelogioDigital-structural File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 9
-    Info (12023): Found entity 1: RelogioDigital File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 1
-Error (10500): VHDL syntax error at controladorCounter.vhd(34) near text "PROCESS";  expecting "if" File: /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 34
-Info (12021): Found 0 design units, including 0 entities, in source file controladorCounter.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 1016 megabytes
-    Error: Processing ended: Fri Oct 18 19:55:12 2019
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:24
+    Info (12022): Found design unit 1: RelogioDigital-structural File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 14
+    Info (12023): Found entity 1: RelogioDigital File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file controladorCounter.vhd
+    Info (12022): Found design unit 1: controladorCounter-behavior File: /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 8
+    Info (12023): Found entity 1: controladorCounter File: /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 4
+Info (12127): Elaborating entity "counter_Wbits" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 4 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 1067 megabytes
+    Info: Processing ended: Fri Oct 18 20:50:21 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 

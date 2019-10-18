@@ -1,6 +1,9 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.std_logic_unsigned.ALL;
 ENTITY controladorCounter IS
-PORT(A, B, C, D : IN BIT_VECTOR(3 DOWNTO 0);
-	  E : OUT BIT_VECTOR(3 DOWNTO 0));
+PORT(A, B, C, D : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	  e : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));
 END controladorCounter;
 ARCHITECTURE behavior OF controladorCounter IS
 BEGIN
@@ -20,10 +23,12 @@ BEGIN
 		
 		IF(E(2) = '1' AND D = "0010") THEN
 			E(1) <= '1';
-		ELSE IF(E(2) = '1' AND C'EVENT AND C = "1001") THEN
-			E(1) <= '1';
 		ELSE 
-			E(1) <= '0';
+			IF(E(2) = '1' AND C'EVENT AND C = "1001") THEN
+				E(1) <= '1';
+			ELSE 
+				E(1) <= '0';
+			END IF;
 		END IF;
 		
 		IF(E(1) = '1' AND D = "1001") THEN
