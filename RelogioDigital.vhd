@@ -34,6 +34,8 @@ load: IN BIT; -- load
 q : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));-- data output
 END COMPONENT;
 
+
+
 COMPONENT decod IS
 PORT(Ai : IN BIT_VECTOR(3 DOWNTO 0);
 	  a, b, c, d, e, f, g: OUT BIT);

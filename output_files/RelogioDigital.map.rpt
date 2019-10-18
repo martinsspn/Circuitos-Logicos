@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RelogioDigital
-Thu Oct 17 16:18:21 2019
+Fri Oct 18 19:55:12 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Oct 17 16:18:21 2019           ;
+; Analysis & Synthesis Status ; Failed - Fri Oct 18 19:55:12 2019           ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; RelogioDigital                              ;
 ; Top-level Entity Name       ; controladorCounter                          ;
@@ -160,7 +160,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Oct 17 16:18:10 2019
+    Info: Processing started: Fri Oct 18 19:55:01 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RelogioDigital -c RelogioDigital
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -174,9 +174,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file Relogio
 Error (10500): VHDL syntax error at controladorCounter.vhd(34) near text "PROCESS";  expecting "if" File: /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 34
 Info (12021): Found 0 design units, including 0 entities, in source file controladorCounter.vhd
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 1015 megabytes
-    Error: Processing ended: Thu Oct 17 16:18:21 2019
+    Error: Peak virtual memory: 1016 megabytes
+    Error: Processing ended: Fri Oct 18 19:55:12 2019
     Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:25
+    Error: Total CPU time (on all processors): 00:00:24
 
 
