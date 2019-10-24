@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RelogioDigital
-Fri Oct 18 20:50:21 2019
+Thu Oct 24 04:49:18 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,9 +14,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "demux_4x8:dm2_4"
+ 11. Port Connectivity Checks: "demux_4x8:dm2_3"
+ 12. Port Connectivity Checks: "demux_4x8:dm2_2"
+ 13. Port Connectivity Checks: "demux_4x8:dm2_1"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -42,14 +47,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 18 20:50:21 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct 24 04:49:18 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; RelogioDigital                              ;
-; Top-level Entity Name           ; counter_Wbits                               ;
+; Top-level Entity Name           ; RelogioDigital                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4                                           ;
-; Total pins                      ; 12                                          ;
+; Total registers                 ; 16                                          ;
+; Total pins                      ; 44                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -68,7 +73,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; counter_Wbits      ; RelogioDigital     ;
+; Top-level entity name                                                           ; RelogioDigital     ; RelogioDigital     ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -166,49 +171,66 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; counter_Wbits.vhd                ; yes             ; User VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/counter_Wbits.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------+---------+
+; counter_Wbits.vhd                ; yes             ; User VHDL File        ; /home/martinsspn/Documentos/Circuitos-Logicos/counter_Wbits.vhd      ;         ;
+; RelogioDigital.vhd               ; yes             ; User VHDL File        ; /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd     ;         ;
+; controladorCounter.vhd           ; yes             ; User VHDL File        ; /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd ;         ;
+; codTeclado.vhd                   ; yes             ; Auto-Found VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/codTeclado.vhd         ;         ;
+; demux.vhd                        ; yes             ; Auto-Found VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/demux.vhd              ;         ;
+; demux_1x4.vhd                    ; yes             ; Auto-Found VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/demux_1x4.vhd          ;         ;
+; demux_4x8.vhd                    ; yes             ; Auto-Found VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/demux_4x8.vhd          ;         ;
+; decod.vhd                        ; yes             ; Auto-Found VHDL File  ; /home/martinsspn/Documentos/Circuitos-Logicos/decod.vhd              ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 3         ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 4         ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 1         ;
-;     -- 5 input functions                    ; 1         ;
-;     -- 4 input functions                    ; 1         ;
-;     -- <=3 input functions                  ; 1         ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 4         ;
-;                                             ;           ;
-; I/O pins                                    ; 12        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; q[0]~reg0 ;
-; Maximum fan-out                             ; 5         ;
-; Total fan-out                               ; 50        ;
-; Average fan-out                             ; 1.56      ;
-+---------------------------------------------+-----------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 37         ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 65         ;
+;     -- 7 input functions                    ; 0          ;
+;     -- 6 input functions                    ; 9          ;
+;     -- 5 input functions                    ; 6          ;
+;     -- 4 input functions                    ; 26         ;
+;     -- <=3 input functions                  ; 24         ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 16         ;
+;                                             ;            ;
+; I/O pins                                    ; 44         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; load~input ;
+; Maximum fan-out                             ; 21         ;
+; Total fan-out                               ; 409        ;
+; Average fan-out                             ; 2.42       ;
++---------------------------------------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; |counter_Wbits             ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 12   ; 0            ; |counter_Wbits      ; counter_Wbits ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name        ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+--------------------+--------------+
+; |RelogioDigital              ; 65 (0)              ; 16 (0)                    ; 0                 ; 0          ; 44   ; 0            ; |RelogioDigital                         ; RelogioDigital     ; work         ;
+;    |codTeclado:ct|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|codTeclado:ct           ; codTeclado         ; work         ;
+;    |controladorCounter:ctrl| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|controladorCounter:ctrl ; controladorCounter ; work         ;
+;    |counter_Wbits:c1|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c1        ; counter_Wbits      ; work         ;
+;    |counter_Wbits:c2|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c2        ; counter_Wbits      ; work         ;
+;    |counter_Wbits:c3|        ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c3        ; counter_Wbits      ; work         ;
+;    |counter_Wbits:c4|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c4        ; counter_Wbits      ; work         ;
+;    |decod:dc1|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc1               ; decod              ; work         ;
+;    |decod:dc2|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc2               ; decod              ; work         ;
+;    |decod:dc3|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc3               ; decod              ; work         ;
+;    |decod:dc4|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc4               ; decod              ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -217,14 +239,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 16    ;
+; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RelogioDigital|counter_Wbits:c3|q[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "demux_4x8:dm2_4"                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "demux_4x8:dm2_3"                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "demux_4x8:dm2_2"                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "demux_4x8:dm2_1"                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -232,18 +299,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     ENA CLR           ; 4                           ;
-; arriav_lcell_comb     ; 4                           ;
-;     normal            ; 4                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 1                           ;
-;         6 data inputs ; 1                           ;
-; boundary_port         ; 12                          ;
+; arriav_ff             ; 16                          ;
+;     ENA CLR SCLR      ; 16                          ;
+; arriav_lcell_comb     ; 66                          ;
+;     normal            ; 66                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 26                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 9                           ;
+; boundary_port         ; 44                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.81                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -262,7 +331,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Oct 18 20:50:07 2019
+    Info: Processing started: Thu Oct 24 04:49:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RelogioDigital -c RelogioDigital
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -276,18 +345,48 @@ Info (12021): Found 2 design units, including 1 entities, in source file Relogio
 Info (12021): Found 2 design units, including 1 entities, in source file controladorCounter.vhd
     Info (12022): Found design unit 1: controladorCounter-behavior File: /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 8
     Info (12023): Found entity 1: controladorCounter File: /home/martinsspn/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 4
-Info (12127): Elaborating entity "counter_Wbits" for the top level hierarchy
+Info (12127): Elaborating entity "RelogioDigital" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at RelogioDigital.vhd(52): object "G" assigned a value but never read File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at RelogioDigital.vhd(52): object "I" assigned a value but never read File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at RelogioDigital.vhd(52): object "K" assigned a value but never read File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at RelogioDigital.vhd(52): object "M" assigned a value but never read File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 52
+Warning (12125): Using design file codTeclado.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: codTeclado-structural File: /home/martinsspn/Documentos/Circuitos-Logicos/codTeclado.vhd Line: 5
+    Info (12023): Found entity 1: codTeclado File: /home/martinsspn/Documentos/Circuitos-Logicos/codTeclado.vhd Line: 1
+Info (12128): Elaborating entity "codTeclado" for hierarchy "codTeclado:ct" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 55
+Warning (12125): Using design file demux.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: demux-structural File: /home/martinsspn/Documentos/Circuitos-Logicos/demux.vhd Line: 6
+    Info (12023): Found entity 1: demux File: /home/martinsspn/Documentos/Circuitos-Logicos/demux.vhd Line: 1
+Info (12128): Elaborating entity "demux" for hierarchy "demux:dm" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 56
+Warning (12125): Using design file demux_1x4.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: demux_1x4-structural File: /home/martinsspn/Documentos/Circuitos-Logicos/demux_1x4.vhd Line: 6
+    Info (12023): Found entity 1: demux_1x4 File: /home/martinsspn/Documentos/Circuitos-Logicos/demux_1x4.vhd Line: 1
+Info (12128): Elaborating entity "demux_1x4" for hierarchy "demux:dm|demux_1x4:d1" File: /home/martinsspn/Documentos/Circuitos-Logicos/demux.vhd Line: 18
+Warning (12125): Using design file demux_4x8.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: demux_4x8-behavior File: /home/martinsspn/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 6
+    Info (12023): Found entity 1: demux_4x8 File: /home/martinsspn/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 1
+Info (12128): Elaborating entity "demux_4x8" for hierarchy "demux_4x8:dm2_1" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at demux_4x8.vhd(11): signal "E" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/martinsspn/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 11
+Warning (10492): VHDL Process Statement warning at demux_4x8.vhd(15): signal "E" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/martinsspn/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 15
+Info (12128): Elaborating entity "counter_Wbits" for hierarchy "counter_Wbits:c1" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 62
+Info (12128): Elaborating entity "controladorCounter" for hierarchy "controladorCounter:ctrl" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 67
+Warning (12125): Using design file decod.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: decod-structural File: /home/martinsspn/Documentos/Circuitos-Logicos/decod.vhd Line: 5
+    Info (12023): Found entity 1: decod File: /home/martinsspn/Documentos/Circuitos-Logicos/decod.vhd Line: 1
+Info (12128): Elaborating entity "decod" for hierarchy "decod:dc1" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 70
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1067 megabytes
-    Info: Processing ended: Fri Oct 18 20:50:21 2019
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "teclas[0]" File: /home/martinsspn/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 6
+Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 65 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 1069 megabytes
+    Info: Processing ended: Thu Oct 24 04:49:18 2019
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Total CPU time (on all processors): 00:00:26
 
 
