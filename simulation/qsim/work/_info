@@ -81,7 +81,7 @@ R17
 Ademux_4x8_arch
 R6
 R7
-Z23 DEx4 work 21 demux_4x8_vhd_vec_tst 0 22 QeQV;^o>V;2HAz5JkmfMg2
+DEx4 work 21 demux_4x8_vhd_vec_tst 0 22 QeQV;^o>V;2HAz5JkmfMg2
 l48
 L33
 V^_o]8oP@QQU9E??]Po9Hf0
@@ -93,6 +93,98 @@ R12
 R13
 R21
 R22
+!i113 1
+R16
+R17
+Erelogiodigital
+Z23 w1571938654
+R3
+R5
+R8
+R2
+Z24 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+R4
+R6
+R7
+Z25 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+Z26 dC:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/simulation/qsim
+R9
+R10
+l0
+L38
+VKk[_LBPB?YNYizlo;YK^R3
+!s100 8a`4@XbWe?b]O1[oEI8`f3
+R11
+32
+Z27 !s110 1571938667
+!i10b 1
+Z28 !s108 1571938665.000000
+R14
+R15
+!i113 1
+R16
+R17
+Astructure
+R3
+R5
+R8
+R2
+R24
+R4
+R6
+R7
+R25
+DEx4 work 14 relogiodigital 0 22 Kk[_LBPB?YNYizlo;YK^R3
+l244
+L100
+VJaD8GMmRCE0W^k`0m5Gfi1
+!s100 EENSliW7H:Jc1fe?5MDM>1
+R11
+32
+R27
+!i10b 1
+R28
+R14
+R15
+!i113 1
+R16
+R17
+Erelogiodigital_vhd_vec_tst
+Z29 w1571938650
+R6
+R7
+R26
+Z30 8Waveform1.vwf.vht
+Z31 FWaveform1.vwf.vht
+l0
+L31
+V;jU8ObQRIS<4KRFDXBH9l1
+!s100 M>F`HV56TzNP0?VZ3^2<g2
+R11
+32
+R27
+!i10b 1
+Z32 !s108 1571938667.000000
+Z33 !s90 -work|work|Waveform1.vwf.vht|
+Z34 !s107 Waveform1.vwf.vht|
+!i113 1
+R16
+R17
+Arelogiodigital_arch
+R6
+R7
+DEx4 work 26 relogiodigital_vhd_vec_tst 0 22 ;jU8ObQRIS<4KRFDXBH9l1
+l60
+L33
+VbMEXOoPAT]e`8HF0HiDd90
+!s100 mmzhN:4VDXP>L=>Mh6cB51
+R11
+32
+R27
+!i10b 1
+R32
+R33
+R34
 !i113 1
 R16
 R17

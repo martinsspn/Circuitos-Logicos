@@ -3,7 +3,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 ENTITY controladorCounter IS
 PORT(A, B, C, D : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	  e : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));
+	  E : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));
 END controladorCounter;
 ARCHITECTURE behavior OF controladorCounter IS
 BEGIN
