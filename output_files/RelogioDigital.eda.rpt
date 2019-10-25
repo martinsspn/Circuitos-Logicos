@@ -1,5 +1,5 @@
-EDA Netlist Writer report for RelogioDigital
-Thu Oct 24 05:04:26 2019
+EDA Netlist Writer report for relogioDigital
+Fri Oct 25 17:24:30 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,8 +36,8 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Oct 24 05:04:26 2019 ;
-; Revision Name             ; RelogioDigital                        ;
+; EDA Netlist Writer Status ; Successful - Fri Oct 25 17:24:30 2019 ;
+; Revision Name             ; relogioDigital                        ;
 ; Top-level Entity Name     ; RelogioDigital                        ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
@@ -65,13 +65,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Simulation Generated Files                                                        ;
-+-----------------------------------------------------------------------------------+
-; Generated Files                                                                   ;
-+-----------------------------------------------------------------------------------+
-; /home/martinsspn/Documentos/Circuitos-Logicos/simulation/qsim//RelogioDigital.vho ;
-+-----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                               ;
++------------------------------------------------------------------------------------------+
+; Generated Files                                                                          ;
++------------------------------------------------------------------------------------------+
+; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/simulation/qsim//relogioDigital.vho ;
++------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -93,14 +93,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Oct 24 05:04:25 2019
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/martinsspn/Documentos/Circuitos-Logicos/simulation/qsim/ RelogioDigital -c RelogioDigital
+    Info: Processing started: Fri Oct 25 17:24:28 2019
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/simulation/qsim/ relogioDigital -c relogioDigital
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file RelogioDigital.vho in folder "/home/martinsspn/Documentos/Circuitos-Logicos/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file relogioDigital.vho in folder "C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1133 megabytes
-    Info: Processing ended: Thu Oct 24 05:04:26 2019
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4727 megabytes
+    Info: Processing ended: Fri Oct 25 17:24:30 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

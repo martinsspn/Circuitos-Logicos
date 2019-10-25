@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/24/2019 05:04:24"
+-- Generated on "10/25/2019 15:20:29"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          RelogioDigital
 -- 
@@ -34,24 +34,22 @@ ARCHITECTURE RelogioDigital_arch OF RelogioDigital_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clock : STD_LOGIC;
-SIGNAL enable : STD_LOGIC;
 SIGNAL H0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL H1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL load : STD_LOGIC;
 SIGNAL M0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL M1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL RC : STD_LOGIC;
 SIGNAL sel : STD_LOGIC;
 SIGNAL tc : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL teclas : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT RelogioDigital
 	PORT (
 	clock : IN STD_LOGIC;
-	enable : IN STD_LOGIC;
-	H0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	H1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	load : IN STD_LOGIC;
-	M0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	M1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	H0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	H1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	M0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	M1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	RC : IN STD_LOGIC;
 	sel : IN STD_LOGIC;
 	tc : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 	teclas : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
@@ -62,12 +60,11 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clock => clock,
-	enable => enable,
 	H0 => H0,
 	H1 => H1,
-	load => load,
 	M0 => M0,
 	M1 => M1,
+	RC => RC,
 	sel => sel,
 	tc => tc,
 	teclas => teclas
@@ -76,21 +73,16 @@ BEGIN
 -- clock
 t_prcs_clock: PROCESS
 BEGIN
-LOOP
 	clock <= '0';
-	WAIT FOR 10000 ps;
-	clock <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
+WAIT;
 END PROCESS t_prcs_clock;
 
--- enable
-t_prcs_enable: PROCESS
+-- RC
+t_prcs_RC: PROCESS
 BEGIN
-	enable <= '1';
+	RC <= '0';
 WAIT;
-END PROCESS t_prcs_enable;
+END PROCESS t_prcs_RC;
 
 -- sel
 t_prcs_sel: PROCESS
@@ -98,15 +90,6 @@ BEGIN
 	sel <= '0';
 WAIT;
 END PROCESS t_prcs_sel;
-
--- load
-t_prcs_load: PROCESS
-BEGIN
-	load <= '1';
-	WAIT FOR 730000 ps;
-	load <= '0';
-WAIT;
-END PROCESS t_prcs_load;
 -- tc[1]
 t_prcs_tc_1: PROCESS
 BEGIN
@@ -153,27 +136,17 @@ END PROCESS t_prcs_teclas_5;
 t_prcs_teclas_4: PROCESS
 BEGIN
 	teclas(4) <= '0';
-	WAIT FOR 430000 ps;
-	teclas(4) <= '1';
-	WAIT FOR 230000 ps;
-	teclas(4) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_4;
 -- teclas[3]
 t_prcs_teclas_3: PROCESS
 BEGIN
 	teclas(3) <= '0';
-	WAIT FOR 210000 ps;
-	teclas(3) <= '1';
-	WAIT FOR 220000 ps;
-	teclas(3) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_3;
 -- teclas[2]
 t_prcs_teclas_2: PROCESS
 BEGIN
-	teclas(2) <= '1';
-	WAIT FOR 210000 ps;
 	teclas(2) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_2;

@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Oct 24 04:49:18 2019
+Analysis & Synthesis Status : Successful - Fri Oct 25 17:22:02 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-Revision Name : RelogioDigital
+Revision Name : relogioDigital
 Top-level Entity Name : RelogioDigital
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 16
-Total pins : 44
+Total registers : 32
+Total pins : 47
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
