@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/25/2019 15:20:29"
+-- Generated on "10/26/2019 21:11:04"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          RelogioDigital
 -- 
@@ -33,22 +33,24 @@ END RelogioDigital_vhd_vec_tst;
 ARCHITECTURE RelogioDigital_arch OF RelogioDigital_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL alarme : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
-SIGNAL H0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL H1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL M0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL M1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL H0 : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL H1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL M0 : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL M1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL RC : STD_LOGIC;
 SIGNAL sel : STD_LOGIC;
 SIGNAL tc : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL teclas : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT RelogioDigital
 	PORT (
+	alarme : BUFFER STD_LOGIC;
 	clock : IN STD_LOGIC;
-	H0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	H1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	M0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	M1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	H0 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	H1 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	M0 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	M1 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	RC : IN STD_LOGIC;
 	sel : IN STD_LOGIC;
 	tc : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -59,6 +61,7 @@ BEGIN
 	i1 : RelogioDigital
 	PORT MAP (
 -- list connections between master ports and signals
+	alarme => alarme,
 	clock => clock,
 	H0 => H0,
 	H1 => H1,
@@ -73,6 +76,13 @@ BEGIN
 -- clock
 t_prcs_clock: PROCESS
 BEGIN
+	FOR i IN 1 TO 6
+	LOOP
+		clock <= '0';
+		WAIT FOR 80000 ps;
+		clock <= '1';
+		WAIT FOR 80000 ps;
+	END LOOP;
 	clock <= '0';
 WAIT;
 END PROCESS t_prcs_clock;
@@ -80,6 +90,8 @@ END PROCESS t_prcs_clock;
 -- RC
 t_prcs_RC: PROCESS
 BEGIN
+	RC <= '1';
+	WAIT FOR 80000 ps;
 	RC <= '0';
 WAIT;
 END PROCESS t_prcs_RC;
@@ -94,11 +106,23 @@ END PROCESS t_prcs_sel;
 t_prcs_tc_1: PROCESS
 BEGIN
 	tc(1) <= '0';
+	WAIT FOR 40000 ps;
+	tc(1) <= '1';
+	WAIT FOR 40000 ps;
+	tc(1) <= '0';
 WAIT;
 END PROCESS t_prcs_tc_1;
 -- tc[0]
 t_prcs_tc_0: PROCESS
 BEGIN
+	tc(0) <= '0';
+	WAIT FOR 20000 ps;
+	tc(0) <= '1';
+	WAIT FOR 20000 ps;
+	tc(0) <= '0';
+	WAIT FOR 20000 ps;
+	tc(0) <= '1';
+	WAIT FOR 20000 ps;
 	tc(0) <= '0';
 WAIT;
 END PROCESS t_prcs_tc_0;
@@ -136,23 +160,37 @@ END PROCESS t_prcs_teclas_5;
 t_prcs_teclas_4: PROCESS
 BEGIN
 	teclas(4) <= '0';
+	WAIT FOR 40000 ps;
+	teclas(4) <= '1';
+	WAIT FOR 20000 ps;
+	teclas(4) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_4;
 -- teclas[3]
 t_prcs_teclas_3: PROCESS
 BEGIN
 	teclas(3) <= '0';
+	WAIT FOR 60000 ps;
+	teclas(3) <= '1';
+	WAIT FOR 20000 ps;
+	teclas(3) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_3;
 -- teclas[2]
 t_prcs_teclas_2: PROCESS
 BEGIN
+	teclas(2) <= '1';
+	WAIT FOR 20000 ps;
 	teclas(2) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_2;
 -- teclas[1]
 t_prcs_teclas_1: PROCESS
 BEGIN
+	teclas(1) <= '0';
+	WAIT FOR 20000 ps;
+	teclas(1) <= '1';
+	WAIT FOR 20000 ps;
 	teclas(1) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_1;

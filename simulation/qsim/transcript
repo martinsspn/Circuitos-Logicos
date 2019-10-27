@@ -1,7 +1,7 @@
 # do relogioDigital.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:24:31 on Oct 25,2019
+# Start time: 21:11:07 on Oct 26,2019
 # vcom -work work relogioDigital.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,20 +15,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity RelogioDigital
 # -- Compiling architecture structure of RelogioDigital
-# End time: 17:24:32 on Oct 25,2019, Elapsed time: 0:00:01
+# End time: 21:11:07 on Oct 26,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:24:32 on Oct 25,2019
-# vcom -work work Waveform17.vwf.vht 
+# Start time: 21:11:07 on Oct 26,2019
+# vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity RelogioDigital_vhd_vec_tst
 # -- Compiling architecture RelogioDigital_arch of RelogioDigital_vhd_vec_tst
-# End time: 17:24:32 on Oct 25,2019, Elapsed time: 0:00:00
+# End time: 21:11:07 on Oct 26,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.RelogioDigital_vhd_vec_tst 
-# Start time: 17:24:32 on Oct 25,2019
+# Start time: 21:11:07 on Oct 26,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -41,9 +41,14 @@
 # Loading cyclonev.cyclonev_atom_pack(body)
 # Loading cyclonev.cyclonev_components
 # Loading work.relogiodigital(structure)
-# ** Fatal: (vsim-3807) Types do not match between component and entity for port "teclas".
-#    Time: 0 ps  Iteration: 0  Instance: /relogiodigital_vhd_vec_tst/i1 File: relogioDigital.vho Line: 40
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 17:24:32 on Oct 25,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
+# Loading ieee.std_logic_arith(body)
+# Loading cyclonev.cyclonev_io_obuf(arch)
+# Loading cyclonev.cyclonev_io_ibuf(arch)
+# Loading cyclonev.cyclonev_clkena(behavior)
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+# ** Warning: Design size of 32318 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# after#34
+# End time: 21:11:08 on Oct 26,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

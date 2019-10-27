@@ -8,8 +8,8 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/martinsspn/Documentos/Circuitos-Logicos/simulation/qsim
-Econtroladorenable
-Z1 w1572021860
+Ecomparador
+Z1 w1572131087
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -22,18 +22,194 @@ Z10 8relogioDigital.vho
 Z11 FrelogioDigital.vho
 l0
 L36
-Va<claOICLeOXjl_eK[KgV2
-!s100 UCFA5>oXl2SXSiaFiz_fI1
+V18SV]QQQmbY19A@3g6Dld0
+!s100 Ud1VA=ozcZ^f>bO=D>h262
 Z12 OV;C;10.5b;63
 32
-Z13 !s110 1572021862
+Z13 !s110 1572131090
 !i10b 1
-Z14 !s108 1572021862.000000
+Z14 !s108 1572131090.000000
 Z15 !s90 -work|work|relogioDigital.vho|
 Z16 !s107 relogioDigital.vho|
 !i113 1
 Z17 o-work work
 Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 10 comparador 0 22 18SV]QQQmbY19A@3g6Dld0
+l184
+L86
+V^e:K>D[=lNfXiF8<7CE^b0
+!s100 Aj3mnAG8;mH76z`J;;e:42
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Ecomparador_vhd_vec_tst
+Z19 w1572131085
+R6
+R7
+R9
+Z20 8Waveform21.vwf.vht
+Z21 FWaveform21.vwf.vht
+l0
+L31
+VLjU>WfaW89JE5X9TSfYTZ3
+!s100 7Mjj[>QfPiAofDW6KV]aW3
+R12
+32
+R13
+!i10b 1
+R14
+Z22 !s90 -work|work|Waveform21.vwf.vht|
+Z23 !s107 Waveform21.vwf.vht|
+!i113 1
+R17
+R18
+Acomparador_arch
+R6
+R7
+DEx4 work 22 comparador_vhd_vec_tst 0 22 LjU>WfaW89JE5X9TSfYTZ3
+l58
+L33
+V?>KQXgk39k`;BI^^Za:Ce2
+!s100 P0:Tz=Lg6eF?;=JKe6da?2
+R12
+32
+R13
+!i10b 1
+R14
+R22
+R23
+!i113 1
+R17
+R18
+Econtroladorcounter
+Z24 w1572132946
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+l0
+L36
+VdJAcY7MDe;Ck;=5036En:3
+!s100 5LANnhXcWoNk@lXgfG8>:2
+R12
+32
+Z25 !s110 1572132947
+!i10b 1
+Z26 !s108 1572132947.000000
+R15
+R16
+!i113 1
+R17
+R18
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 18 controladorcounter 0 22 dJAcY7MDe;Ck;=5036En:3
+l131
+L69
+Vj6a6mM1OZoaodMkoK]b;I0
+!s100 8KYgFUHd:LH^E<Ng25B3[2
+R12
+32
+R25
+!i10b 1
+R26
+R15
+R16
+!i113 1
+R17
+R18
+Econtroladorcounter_vhd_vec_tst
+Z27 w1572132944
+R6
+R7
+R9
+Z28 8Waveform22.vwf.vht
+Z29 FWaveform22.vwf.vht
+l0
+L31
+VbKV0>aje@NMI82iGSkVdT3
+!s100 >k9ZJ;ZWNbf9hmb`Ko@kN1
+R12
+32
+R25
+!i10b 1
+R26
+Z30 !s90 -work|work|Waveform22.vwf.vht|
+Z31 !s107 Waveform22.vwf.vht|
+!i113 1
+R17
+R18
+Acontroladorcounter_arch
+R6
+R7
+DEx4 work 30 controladorcounter_vhd_vec_tst 0 22 bKV0>aje@NMI82iGSkVdT3
+l50
+L33
+VnoB>5lVEa:[Z[3<b5LP2N3
+!s100 gl`AS@JAOcjIQNfe1CDn82
+R12
+32
+R25
+!i10b 1
+R26
+R30
+R31
+!i113 1
+R17
+R18
+Econtroladorenable
+Z32 w1572021860
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+l0
+L36
+Va<claOICLeOXjl_eK[KgV2
+!s100 UCFA5>oXl2SXSiaFiz_fI1
+R12
+32
+Z33 !s110 1572021862
+!i10b 1
+Z34 !s108 1572021862.000000
+R15
+R16
+!i113 1
+R17
+R18
 Astructure
 R2
 R3
@@ -49,32 +225,32 @@ VO8TJeAH05L[Q?gPK0AOb^0
 !s100 kE_B[9]HE7@UMN6J@D?371
 R12
 32
-R13
+R33
 !i10b 1
-R14
+R34
 R15
 R16
 !i113 1
 R17
 R18
 Econtroladorenable_vhd_vec_tst
-Z19 w1572021857
+Z35 w1572021857
 R6
 R7
 R9
-Z20 8Waveform2.vwf.vht
-Z21 FWaveform2.vwf.vht
+Z36 8Waveform2.vwf.vht
+Z37 FWaveform2.vwf.vht
 l0
 L31
 VhUmYDi:cLn[PoX8`9P=Bb3
 !s100 P>nI13e6_A7o^FYL?^mNJ0
 R12
 32
-R13
+R33
 !i10b 1
-R14
-Z22 !s90 -work|work|Waveform2.vwf.vht|
-Z23 !s107 Waveform2.vwf.vht|
+R34
+Z38 !s90 -work|work|Waveform2.vwf.vht|
+Z39 !s107 Waveform2.vwf.vht|
 !i113 1
 R17
 R18
@@ -90,14 +266,14 @@ R12
 32
 !s110 1572021863
 !i10b 1
-R14
-R22
-R23
+R34
+R38
+R39
 !i113 1
 R17
 R18
 Edemux_4x8
-Z24 w1571309860
+Z40 w1571309860
 R2
 R3
 R4
@@ -114,9 +290,9 @@ VQeJ=]<X3DQoP<nWR36h:[2
 !s100 QTbBh4J;7]8kJR>nKFWED3
 R12
 32
-Z25 !s110 1571309861
+Z41 !s110 1571309861
 !i10b 1
-Z26 !s108 1571309861.000000
+Z42 !s108 1571309861.000000
 R15
 R16
 !i113 1
@@ -137,32 +313,32 @@ VBaS[@2idT3]^VE7^Bn>Mb2
 !s100 O:98MWnQ342LYElS:Y0kT2
 R12
 32
-R25
+R41
 !i10b 1
-R26
+R42
 R15
 R16
 !i113 1
 R17
 R18
 Edemux_4x8_vhd_vec_tst
-Z27 w1571309857
+Z43 w1571309857
 R6
 R7
 R0
-Z28 8Waveform.vwf.vht
-Z29 FWaveform.vwf.vht
+Z44 8Waveform.vwf.vht
+Z45 FWaveform.vwf.vht
 l0
 L31
 VQeQV;^o>V;2HAz5JkmfMg2
 !s100 ]0zE11bkC4UH[h=m692n31
 R12
 32
-R25
+R41
 !i10b 1
-R26
-Z30 !s90 -work|work|Waveform.vwf.vht|
-Z31 !s107 Waveform.vwf.vht|
+R42
+Z46 !s90 -work|work|Waveform.vwf.vht|
+Z47 !s107 Waveform.vwf.vht|
 !i113 1
 R17
 R18
@@ -176,37 +352,37 @@ V^_o]8oP@QQU9E??]Po9Hf0
 !s100 GcZg?gKG@TaRmkN67EAmc2
 R12
 32
-R25
+R41
 !i10b 1
-R26
-R30
-R31
+R42
+R46
+R47
 !i113 1
 R17
 R18
 Erelogiodigital
-Z32 w1572035070
+Z48 w1572135066
 R3
 R5
 R8
 R2
-Z33 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+Z49 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
 R4
 R6
 R7
-Z34 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+Z50 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
 R9
 R10
 R11
 l0
 L38
-VS3g3=JGY0cL6b>_Y7]45E2
-!s100 G33kbFR3b?PmP12[4I8RZ0
+VG1A9Va@j^AI09hg1CNZV:0
+!s100 =Xb[H=dIX3L1lZRLGDUbP0
 R12
 32
-Z35 !s110 1572035072
+Z51 !s110 1572135067
 !i10b 1
-Z36 !s108 1572035071.000000
+Z52 !s108 1572135067.000000
 R15
 R16
 !i113 1
@@ -217,62 +393,62 @@ R3
 R5
 R8
 R2
-R33
+R49
 R4
 R6
 R7
-R34
-DEx4 work 14 relogiodigital 0 22 S3g3=JGY0cL6b>_Y7]45E2
-l298
-L102
-VLH:95fP`8]Hd@?GhoIkUc3
-!s100 LcdP^eMGW?TbhcNfWgSFL2
+R50
+DEx4 work 14 relogiodigital 0 22 G1A9Va@j^AI09hg1CNZV:0
+l312
+L104
+V1nK;AhCig2iGnj6`Fo2<X2
+!s100 RU?A`nMR?h3?9^mF0<8Aj1
 R12
 32
-R35
+R51
 !i10b 1
-R36
+R52
 R15
 R16
 !i113 1
 R17
 R18
 Erelogiodigital_vhd_vec_tst
-Z37 w1572035068
+Z53 w1572135064
 R6
 R7
 R9
-Z38 8Waveform17.vwf.vht
-Z39 FWaveform17.vwf.vht
+R44
+R45
 l0
 L31
 V;jU8ObQRIS<4KRFDXBH9l1
 !s100 M>F`HV56TzNP0?VZ3^2<g2
 R12
 32
-R35
+R51
 !i10b 1
-Z40 !s108 1572035072.000000
-Z41 !s90 -work|work|Waveform17.vwf.vht|
-Z42 !s107 Waveform17.vwf.vht|
+R52
+R46
+R47
 !i113 1
 R17
 R18
 Arelogiodigital_arch
 R6
 R7
-Z43 DEx4 work 26 relogiodigital_vhd_vec_tst 0 22 ;jU8ObQRIS<4KRFDXBH9l1
-l58
+Z54 DEx4 work 26 relogiodigital_vhd_vec_tst 0 22 ;jU8ObQRIS<4KRFDXBH9l1
+l60
 L33
-V;PijkL=64`]LIHJJKfJS:3
-!s100 ^A@;Ea6Jz;M<PGNDUZeWZ1
+Vf2=`6C26k3iA@h1bJ<[Lz0
+!s100 2KdDBKziP@N>HWNW[Y<:73
 R12
 32
-R35
+R51
 !i10b 1
-R40
-R41
-R42
+R52
+R46
+R47
 !i113 1
 R17
 R18
