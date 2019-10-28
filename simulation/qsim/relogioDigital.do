@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work relogioDigital.vho
-vcom -work work Waveform.vwf.vht
+vcom -work work Waveform7.vwf.vht
 vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.RelogioDigital_vhd_vec_tst
 vcd file -direction relogioDigital.msim.vcd
 vcd add -internal RelogioDigital_vhd_vec_tst/*
@@ -15,3 +15,4 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+

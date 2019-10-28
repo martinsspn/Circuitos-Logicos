@@ -18,9 +18,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/24/2019 14:39:05"
+-- Generated on "10/28/2019 15:31:00"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          RelogioDigital
+-- Vhdl Test Bench(with test vectors) for design  :          decod
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -28,167 +28,98 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY RelogioDigital_vhd_vec_tst IS
-END RelogioDigital_vhd_vec_tst;
-ARCHITECTURE RelogioDigital_arch OF RelogioDigital_vhd_vec_tst IS
+ENTITY decod_vhd_vec_tst IS
+END decod_vhd_vec_tst;
+ARCHITECTURE decod_arch OF decod_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL clock : STD_LOGIC;
-SIGNAL enable : STD_LOGIC;
-SIGNAL H0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL H1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL load : STD_LOGIC;
-SIGNAL M0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL M1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL sel : STD_LOGIC;
-SIGNAL tc : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL teclas : STD_LOGIC_VECTOR(9 DOWNTO 0);
-COMPONENT RelogioDigital
+SIGNAL a : STD_LOGIC;
+SIGNAL Ai : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL b : STD_LOGIC;
+SIGNAL c : STD_LOGIC;
+SIGNAL d : STD_LOGIC;
+SIGNAL e : STD_LOGIC;
+SIGNAL f : STD_LOGIC;
+SIGNAL g : STD_LOGIC;
+COMPONENT decod
 	PORT (
-	clock : IN STD_LOGIC;
-	enable : IN STD_LOGIC;
-	H0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	H1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	load : IN STD_LOGIC;
-	M0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	M1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	sel : IN STD_LOGIC;
-	tc : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	teclas : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
+	a : BUFFER STD_LOGIC;
+	Ai : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	b : BUFFER STD_LOGIC;
+	c : BUFFER STD_LOGIC;
+	d : BUFFER STD_LOGIC;
+	e : BUFFER STD_LOGIC;
+	f : BUFFER STD_LOGIC;
+	g : BUFFER STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : RelogioDigital
+	i1 : decod
 	PORT MAP (
 -- list connections between master ports and signals
-	clock => clock,
-	enable => enable,
-	H0 => H0,
-	H1 => H1,
-	load => load,
-	M0 => M0,
-	M1 => M1,
-	sel => sel,
-	tc => tc,
-	teclas => teclas
+	a => a,
+	Ai => Ai,
+	b => b,
+	c => c,
+	d => d,
+	e => e,
+	f => f,
+	g => g
 	);
-
--- clock
-t_prcs_clock: PROCESS
+-- Ai[3]
+t_prcs_Ai_3: PROCESS
 BEGIN
-LOOP
-	clock <= '0';
-	WAIT FOR 10000 ps;
-	clock <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_clock;
-
--- enable
-t_prcs_enable: PROCESS
-BEGIN
-	enable <= '1';
+	Ai(3) <= '0';
+	WAIT FOR 160000 ps;
+	Ai(3) <= '1';
 WAIT;
-END PROCESS t_prcs_enable;
-
--- load
-t_prcs_load: PROCESS
+END PROCESS t_prcs_Ai_3;
+-- Ai[2]
+t_prcs_Ai_2: PROCESS
 BEGIN
-	load <= '0';
+	Ai(2) <= '0';
+	WAIT FOR 80000 ps;
+	Ai(2) <= '1';
+	WAIT FOR 80000 ps;
+	Ai(2) <= '0';
 WAIT;
-END PROCESS t_prcs_load;
-
--- sel
-t_prcs_sel: PROCESS
+END PROCESS t_prcs_Ai_2;
+-- Ai[1]
+t_prcs_Ai_1: PROCESS
 BEGIN
-	sel <= '0';
+	Ai(1) <= '0';
+	WAIT FOR 40000 ps;
+	Ai(1) <= '1';
+	WAIT FOR 40000 ps;
+	Ai(1) <= '0';
+	WAIT FOR 40000 ps;
+	Ai(1) <= '1';
+	WAIT FOR 40000 ps;
+	Ai(1) <= '0';
 WAIT;
-END PROCESS t_prcs_sel;
--- tc[1]
-t_prcs_tc_1: PROCESS
+END PROCESS t_prcs_Ai_1;
+-- Ai[0]
+t_prcs_Ai_0: PROCESS
 BEGIN
-	tc(1) <= '0';
+	Ai(0) <= '0';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '1';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '0';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '1';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '0';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '1';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '0';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '1';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '0';
+	WAIT FOR 20000 ps;
+	Ai(0) <= '1';
 WAIT;
-END PROCESS t_prcs_tc_1;
--- tc[0]
-t_prcs_tc_0: PROCESS
-BEGIN
-	tc(0) <= '0';
-WAIT;
-END PROCESS t_prcs_tc_0;
--- teclas[9]
-t_prcs_teclas_9: PROCESS
-BEGIN
-	teclas(9) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_9;
--- teclas[8]
-t_prcs_teclas_8: PROCESS
-BEGIN
-	teclas(8) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_8;
--- teclas[7]
-t_prcs_teclas_7: PROCESS
-BEGIN
-	teclas(7) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_7;
--- teclas[6]
-t_prcs_teclas_6: PROCESS
-BEGIN
-	teclas(6) <= '0';
-	WAIT FOR 620000 ps;
-	teclas(6) <= '1';
-	WAIT FOR 180000 ps;
-	teclas(6) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_6;
--- teclas[5]
-t_prcs_teclas_5: PROCESS
-BEGIN
-	teclas(5) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_5;
--- teclas[4]
-t_prcs_teclas_4: PROCESS
-BEGIN
-	teclas(4) <= '0';
-	WAIT FOR 240000 ps;
-	teclas(4) <= '1';
-	WAIT FOR 200000 ps;
-	teclas(4) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_4;
--- teclas[3]
-t_prcs_teclas_3: PROCESS
-BEGIN
-	teclas(3) <= '0';
-	WAIT FOR 440000 ps;
-	teclas(3) <= '1';
-	WAIT FOR 180000 ps;
-	teclas(3) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_3;
--- teclas[2]
-t_prcs_teclas_2: PROCESS
-BEGIN
-	teclas(2) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_2;
--- teclas[1]
-t_prcs_teclas_1: PROCESS
-BEGIN
-	teclas(1) <= '1';
-	WAIT FOR 240000 ps;
-	teclas(1) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_1;
--- teclas[0]
-t_prcs_teclas_0: PROCESS
-BEGIN
-	teclas(0) <= '0';
-WAIT;
-END PROCESS t_prcs_teclas_0;
-END RelogioDigital_arch;
+END PROCESS t_prcs_Ai_0;
+END decod_arch;

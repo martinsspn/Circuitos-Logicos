@@ -15,7 +15,7 @@ BEGIN
 	BEGIN
 		IF (clrn='0') THEN
 			q <= (OTHERS => '0');
-		ELSIF (clk'EVENT AND clk='1') THEN
+		ELSIF (clk'EVENT AND clk='0') THEN
 			IF (ena='1') THEN
 				IF (load='1') THEN
 					q <= d;

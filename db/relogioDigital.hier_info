@@ -26,6 +26,7 @@ clock => counter_Wbits:c1.clk
 clock => counter_Wbits:c2.clk
 clock => counter_Wbits:c3.clk
 clock => counter_Wbits:c4.clk
+clock => controladorCounter:ctrl.clk
 clock => reg_pp_Wbits:r1.clk
 clock => reg_pp_Wbits:r2.clk
 clock => reg_pp_Wbits:r3.clk
@@ -42,7 +43,6 @@ H1[3] << decod:dc1.d
 H1[4] << decod:dc1.e
 H1[5] << decod:dc1.f
 H1[6] << decod:dc1.g
-H1[7] << <GND>
 H0[0] << decod:dc2.a
 H0[1] << decod:dc2.b
 H0[2] << decod:dc2.c
@@ -50,7 +50,6 @@ H0[3] << decod:dc2.d
 H0[4] << decod:dc2.e
 H0[5] << decod:dc2.f
 H0[6] << decod:dc2.g
-H0[7] << <GND>
 M1[0] << decod:dc3.a
 M1[1] << decod:dc3.b
 M1[2] << decod:dc3.c
@@ -58,7 +57,6 @@ M1[3] << decod:dc3.d
 M1[4] << decod:dc3.e
 M1[5] << decod:dc3.f
 M1[6] << decod:dc3.g
-M1[7] << <GND>
 M0[0] << decod:dc4.a
 M0[1] << decod:dc4.b
 M0[2] << decod:dc4.c
@@ -66,7 +64,6 @@ M0[3] << decod:dc4.d
 M0[4] << decod:dc4.e
 M0[5] << decod:dc4.f
 M0[6] << decod:dc4.g
-M0[7] << <GND>
 alarme << comparador:comp.S
 
 
@@ -212,22 +209,23 @@ TC1[1] => Equal3.IN0
 SEL1 => C[0].DATAB
 SEL1 => C[2].DATAB
 SEL1 => C[4].DATAB
-SEL1 => C[6]$latch.DATAIN
+SEL1 => C[6].DATAA
 SEL1 => C[7]$latch.DATAIN
 SEL1 => C[5].DATAB
 SEL1 => C[3].DATAB
 SEL1 => C[1].DATAB
-rc1 => comb.IN1
-rc1 => comb.IN1
+rc1 => C[1].OUTPUTSELECT
+rc1 => C[3].OUTPUTSELECT
+rc1 => C[5].OUTPUTSELECT
+rc1 => C[6].IN1
 rc1 => comb.IN1
 rc1 => comb.IN1
 rc1 => C[7].IN1
-rc1 => comb.IN1
 rc1 => C[5].IN1
-rc1 => comb.IN1
-rc1 => C[3].IN1
-rc1 => C[1]$latch.PRESET
-rc1 => C[0]$latch.PRESET
+E[0] => ~NO_FANOUT~
+E[1] => C[1].DATAA
+E[2] => C[3].DATAA
+E[3] => C[5].DATAA
 C[0] <= C[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 C[1] <= C[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 C[2] <= C[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -455,30 +453,30 @@ q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |RelogioDigital|controladorCounter:ctrl
-A[0] => Equal0.IN7
-A[1] => Equal0.IN6
-A[2] => Equal0.IN5
-A[3] => Equal0.IN4
-B[0] => Equal1.IN7
-B[1] => Equal1.IN6
-B[2] => Equal1.IN5
-B[3] => Equal1.IN4
-C[0] => Equal3.IN7
-C[1] => Equal3.IN6
-C[2] => Equal3.IN5
-C[3] => Equal3.IN4
-D[0] => Equal2.IN7
-D[0] => Equal4.IN7
-D[1] => Equal2.IN6
-D[1] => Equal4.IN6
-D[2] => Equal2.IN5
-D[2] => Equal4.IN5
-D[3] => Equal2.IN4
-D[3] => Equal4.IN4
-E[0] <= process_0.DB_MAX_OUTPUT_PORT_TYPE
-E[1] <= E.DB_MAX_OUTPUT_PORT_TYPE
-E[2] <= process_0.DB_MAX_OUTPUT_PORT_TYPE
-E[3] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+M0[0] => Equal0.IN7
+M0[1] => Equal0.IN6
+M0[2] => Equal0.IN5
+M0[3] => Equal0.IN4
+M1[0] => Equal1.IN7
+M1[1] => Equal1.IN6
+M1[2] => Equal1.IN5
+M1[3] => Equal1.IN4
+H0[0] => Equal3.IN7
+H0[1] => Equal3.IN6
+H0[2] => Equal3.IN5
+H0[3] => Equal3.IN4
+H1[0] => Equal2.IN7
+H1[1] => Equal2.IN6
+H1[2] => Equal2.IN5
+H1[3] => Equal2.IN4
+clk => E[0]~reg0.CLK
+clk => E[1]~reg0.CLK
+clk => E[2]~reg0.CLK
+clk => E[3]~reg0.CLK
+E[0] <= E[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+E[1] <= E[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+E[2] <= E[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+E[3] <= E[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |RelogioDigital|reg_pp_Wbits:r1

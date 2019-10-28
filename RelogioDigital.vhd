@@ -2,12 +2,12 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 ENTITY RelogioDigital IS
-PORT(teclas : IN BIT_VECTOR(9 downto 0);
+PORT(teclas : IN BIT_VECTOR(9 DOWNTO 0);
 		tc : IN BIT_vector(1 downto 0);
 		sel : IN BIT;
 		clock : IN BIT;
 		RC : IN BIT;
-		H1, H0, M1, M0: OUT BIT_veCTOR(7 DOWNTO 0);
+		H1, H0, M1, M0: OUT BIT_veCTOR(6 DOWNTO 0);
 		alarme : OUT BIT);
 END RelogioDigital;
 
@@ -40,7 +40,8 @@ q : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));-- data output
 END COMPONENT;
 
 COMPONENT controladorCounter IS
-PORT(A, B, C, D : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+PORT(M0, M1, H0, H1 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	  clk : IN BIT;
 	  E : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0));
 END COMPONENT;
 
@@ -48,6 +49,7 @@ COMPONENT controladorEnable IS
 PORT(TC1 : IN BIT_VECTOR(1 DOWNTO 0);
 	  SEL1 : IN BIT;
 	  rc1 : IN BIT;
+	  E : IN BIT_VECTOR(3 DOWNTO 0);
 	  C : OUT BIT_VECTOR(7 DOWNTO 0));
 END COMPONENT;
 
@@ -81,7 +83,7 @@ BEGIN
 	ct : codTeclado PORT MAP(teclas(9), teclas(8), teclas(7), teclas(6), teclas(5), teclas(4), teclas(3), teclas(2), teclas(1), teclas(0), sA(3), sA(2), sA(1), sA(0));
 	dm : demux PORT MAP(sA, tc, sB, sC, sD, sE);
 	
-	ce : controladorEnable PORT MAP(tc, sel, RC, ENABLE);
+	ce : controladorEnable PORT MAP(tc, sel, RC, sR, ENABLE);
 	
 	dm2_1 : demux_4x8 PORT MAP(sB, sel, sF, sG);  
 	dm2_2 : demux_4x8 PORT MAP(sC, sel, sH, sI);
@@ -94,7 +96,7 @@ BEGIN
 	c3 : counter_Wbits PORT MAP(to_stdlogicvector(sJ), clock, sR(1), ENABLE(3), RC, TO_BITVECTOR(q) => sP);
 	c4 : counter_Wbits PORT MAP(to_stdlogicvector(sL), clock, sR(0), ENABLE(1), RC, TO_BITVECTOR(q) => sQ);
 	
-	ctrl : controladorCounter PORT MAP(to_stdlogicvector(sN), to_stdlogicvector(sO), to_stdlogicvector(sP), to_stdlogicvector(sQ), TO_BITVECTOR(e) => sR);
+	ctrl : controladorCounter PORT MAP(to_stdlogicvector(sN), to_stdlogicvector(sO), to_stdlogicvector(sP), to_stdlogicvector(sQ), clock, TO_BITVECTOR(e) => sR);
 	
 	r1 : reg_pp_Wbits PORT MAP(sG, clock, ENABLE(6), sS);
 	r2 : reg_pp_Wbits PORT MAP(sI, clock, ENABLE(4), sT);
@@ -108,10 +110,10 @@ BEGIN
 	
 	comp : comparador PORT MAP(sN, sO, sP, sQ, sS, sT, sU, sV, alarme);
 	
-	dc1 : decod PORT MAP(sX, H1(0), H1(1), H1(2), H1(3), H1(4), H1(5), H1(6));
-	dc2 : decod PORT MAP(sY, H0(0), H0(1), H0(2), H0(3), H0(4), H0(5), H0(6));
-	dc3 : decod PORT MAP(sW, M1(0), M1(1), M1(2), M1(3), M1(4), M1(5), M1(6));
-	dc4 : decod PORT MAP(sZ, M0(0), M0(1), M0(2), M0(3), M0(4), M0(5), M0(6));
+	dc1 : decod PORT MAP(sZ, H1(0), H1(1), H1(2), H1(3), H1(4), H1(5), H1(6));
+	dc2 : decod PORT MAP(sW, H0(0), H0(1), H0(2), H0(3), H0(4), H0(5), H0(6));
+	dc3 : decod PORT MAP(sY, M1(0), M1(1), M1(2), M1(3), M1(4), M1(5), M1(6));
+	dc4 : decod PORT MAP(sX, M0(0), M0(1), M0(2), M0(3), M0(4), M0(5), M0(6));
 
 END structural;
 

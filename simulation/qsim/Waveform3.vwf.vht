@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/25/2019 14:20:20"
+-- Generated on "10/28/2019 16:37:00"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          RelogioDigital
 -- 
@@ -33,6 +33,7 @@ END RelogioDigital_vhd_vec_tst;
 ARCHITECTURE RelogioDigital_arch OF RelogioDigital_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL alarme : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
 SIGNAL H0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL H1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -41,9 +42,10 @@ SIGNAL M1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL RC : STD_LOGIC;
 SIGNAL sel : STD_LOGIC;
 SIGNAL tc : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL TECLAS : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL teclas : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT RelogioDigital
 	PORT (
+	alarme : OUT STD_LOGIC;
 	clock : IN STD_LOGIC;
 	H0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	H1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -52,13 +54,14 @@ COMPONENT RelogioDigital
 	RC : IN STD_LOGIC;
 	sel : IN STD_LOGIC;
 	tc : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	TECLAS : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
+	teclas : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
 	i1 : RelogioDigital
 	PORT MAP (
 -- list connections between master ports and signals
+	alarme => alarme,
 	clock => clock,
 	H0 => H0,
 	H1 => H1,
@@ -67,7 +70,7 @@ BEGIN
 	RC => RC,
 	sel => sel,
 	tc => tc,
-	TECLAS => TECLAS
+	teclas => teclas
 	);
 
 -- clock
@@ -75,23 +78,18 @@ t_prcs_clock: PROCESS
 BEGIN
 LOOP
 	clock <= '0';
-	WAIT FOR 1000 ps;
+	WAIT FOR 20000 ps;
 	clock <= '1';
-	WAIT FOR 1000 ps;
-	IF (NOW >= 10000 ps) THEN WAIT; END IF;
+	WAIT FOR 20000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clock;
 
 -- RC
 t_prcs_RC: PROCESS
 BEGIN
-LOOP
 	RC <= '0';
-	WAIT FOR 5000 ps;
-	RC <= '1';
-	WAIT FOR 5000 ps;
-	IF (NOW >= 10000 ps) THEN WAIT; END IF;
-END LOOP;
+WAIT;
 END PROCESS t_prcs_RC;
 
 -- sel
@@ -103,23 +101,73 @@ END PROCESS t_prcs_sel;
 -- tc[1]
 t_prcs_tc_1: PROCESS
 BEGIN
-LOOP
 	tc(1) <= '0';
-	WAIT FOR 2500 ps;
-	tc(1) <= '1';
-	WAIT FOR 2500 ps;
-	IF (NOW >= 10000 ps) THEN WAIT; END IF;
-END LOOP;
+WAIT;
 END PROCESS t_prcs_tc_1;
 -- tc[0]
 t_prcs_tc_0: PROCESS
 BEGIN
-LOOP
 	tc(0) <= '0';
-	WAIT FOR 1250 ps;
-	tc(0) <= '1';
-	WAIT FOR 1250 ps;
-	IF (NOW >= 10000 ps) THEN WAIT; END IF;
-END LOOP;
+WAIT;
 END PROCESS t_prcs_tc_0;
+-- teclas[9]
+t_prcs_teclas_9: PROCESS
+BEGIN
+	teclas(9) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_9;
+-- teclas[8]
+t_prcs_teclas_8: PROCESS
+BEGIN
+	teclas(8) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_8;
+-- teclas[7]
+t_prcs_teclas_7: PROCESS
+BEGIN
+	teclas(7) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_7;
+-- teclas[6]
+t_prcs_teclas_6: PROCESS
+BEGIN
+	teclas(6) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_6;
+-- teclas[5]
+t_prcs_teclas_5: PROCESS
+BEGIN
+	teclas(5) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_5;
+-- teclas[4]
+t_prcs_teclas_4: PROCESS
+BEGIN
+	teclas(4) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_4;
+-- teclas[3]
+t_prcs_teclas_3: PROCESS
+BEGIN
+	teclas(3) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_3;
+-- teclas[2]
+t_prcs_teclas_2: PROCESS
+BEGIN
+	teclas(2) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_2;
+-- teclas[1]
+t_prcs_teclas_1: PROCESS
+BEGIN
+	teclas(1) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_1;
+-- teclas[0]
+t_prcs_teclas_0: PROCESS
+BEGIN
+	teclas(0) <= '0';
+WAIT;
+END PROCESS t_prcs_teclas_0;
 END RelogioDigital_arch;

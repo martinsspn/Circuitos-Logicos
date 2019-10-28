@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/25/2019 14:38:10"
+-- Generated on "10/28/2019 18:22:40"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          RelogioDigital
 -- 
@@ -33,6 +33,7 @@ END RelogioDigital_vhd_vec_tst;
 ARCHITECTURE RelogioDigital_arch OF RelogioDigital_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL alarme : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
 SIGNAL H0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL H1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -44,6 +45,7 @@ SIGNAL tc : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL teclas : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT RelogioDigital
 	PORT (
+	alarme : OUT STD_LOGIC;
 	clock : IN STD_LOGIC;
 	H0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	H1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -59,6 +61,7 @@ BEGIN
 	i1 : RelogioDigital
 	PORT MAP (
 -- list connections between master ports and signals
+	alarme => alarme,
 	clock => clock,
 	H0 => H0,
 	H1 => H1,
@@ -73,8 +76,13 @@ BEGIN
 -- clock
 t_prcs_clock: PROCESS
 BEGIN
+LOOP
 	clock <= '0';
-WAIT;
+	WAIT FOR 20000 ps;
+	clock <= '1';
+	WAIT FOR 20000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_clock;
 
 -- RC

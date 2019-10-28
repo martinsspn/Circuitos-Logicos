@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/25/2019 14:28:04"
+-- Generated on "10/28/2019 17:27:10"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          RelogioDigital
 -- 
@@ -33,6 +33,7 @@ END RelogioDigital_vhd_vec_tst;
 ARCHITECTURE RelogioDigital_arch OF RelogioDigital_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL alarme : STD_LOGIC;
 SIGNAL clock : STD_LOGIC;
 SIGNAL H0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL H1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -44,6 +45,7 @@ SIGNAL tc : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL teclas : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT RelogioDigital
 	PORT (
+	alarme : OUT STD_LOGIC;
 	clock : IN STD_LOGIC;
 	H0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	H1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -59,6 +61,7 @@ BEGIN
 	i1 : RelogioDigital
 	PORT MAP (
 -- list connections between master ports and signals
+	alarme => alarme,
 	clock => clock,
 	H0 => H0,
 	H1 => H1,
@@ -69,6 +72,44 @@ BEGIN
 	tc => tc,
 	teclas => teclas
 	);
+
+-- clock
+t_prcs_clock: PROCESS
+BEGIN
+LOOP
+	clock <= '0';
+	WAIT FOR 20000 ps;
+	clock <= '1';
+	WAIT FOR 20000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
+END PROCESS t_prcs_clock;
+
+-- RC
+t_prcs_RC: PROCESS
+BEGIN
+	RC <= '0';
+WAIT;
+END PROCESS t_prcs_RC;
+
+-- sel
+t_prcs_sel: PROCESS
+BEGIN
+	sel <= '0';
+WAIT;
+END PROCESS t_prcs_sel;
+-- tc[1]
+t_prcs_tc_1: PROCESS
+BEGIN
+	tc(1) <= '0';
+WAIT;
+END PROCESS t_prcs_tc_1;
+-- tc[0]
+t_prcs_tc_0: PROCESS
+BEGIN
+	tc(0) <= '0';
+WAIT;
+END PROCESS t_prcs_tc_0;
 -- teclas[9]
 t_prcs_teclas_9: PROCESS
 BEGIN
@@ -120,7 +161,7 @@ END PROCESS t_prcs_teclas_2;
 -- teclas[1]
 t_prcs_teclas_1: PROCESS
 BEGIN
-	teclas(1) <= '1';
+	teclas(1) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_1;
 -- teclas[0]
@@ -129,58 +170,4 @@ BEGIN
 	teclas(0) <= '0';
 WAIT;
 END PROCESS t_prcs_teclas_0;
-
--- clock
-t_prcs_clock: PROCESS
-BEGIN
-LOOP
-	clock <= '0';
-	WAIT FOR 1000 ps;
-	clock <= '1';
-	WAIT FOR 1000 ps;
-	IF (NOW >= 100000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_clock;
-
--- RC
-t_prcs_RC: PROCESS
-BEGIN
-	RC <= '1';
-	WAIT FOR 10000 ps;
-	RC <= '0';
-WAIT;
-END PROCESS t_prcs_RC;
--- tc[1]
-t_prcs_tc_1: PROCESS
-BEGIN
-	FOR i IN 1 TO 2
-	LOOP
-		tc(1) <= '0';
-		WAIT FOR 2500 ps;
-		tc(1) <= '1';
-		WAIT FOR 2500 ps;
-	END LOOP;
-	tc(1) <= '0';
-WAIT;
-END PROCESS t_prcs_tc_1;
--- tc[0]
-t_prcs_tc_0: PROCESS
-BEGIN
-	FOR i IN 1 TO 4
-	LOOP
-		tc(0) <= '0';
-		WAIT FOR 1250 ps;
-		tc(0) <= '1';
-		WAIT FOR 1250 ps;
-	END LOOP;
-	tc(0) <= '0';
-WAIT;
-END PROCESS t_prcs_tc_0;
-
--- sel
-t_prcs_sel: PROCESS
-BEGIN
-	sel <= '0';
-WAIT;
-END PROCESS t_prcs_sel;
 END RelogioDigital_arch;

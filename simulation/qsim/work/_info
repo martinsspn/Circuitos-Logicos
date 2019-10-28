@@ -272,8 +272,96 @@ R39
 !i113 1
 R17
 R18
+Edecod
+Z40 w1572287463
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z41 dC:/Users/marti/OneDrive/Desktop/Circuitos-Logicos-master/simulation/qsim
+R10
+R11
+l0
+L36
+V2^bSM;8c8LbIlh1F6<zi00
+!s100 nzfD9P<llRNBOKn4kS?NO1
+R12
+32
+Z42 !s110 1572289680
+!i10b 1
+Z43 !s108 1572289680.000000
+R15
+R16
+!i113 1
+R17
+R18
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 5 decod 0 22 2^bSM;8c8LbIlh1F6<zi00
+l98
+L63
+VLH9e?O_9FGQZ`DMa@XgC[1
+!s100 QzacTfj^R1NzQFBlRLCOd1
+R12
+32
+R42
+!i10b 1
+R43
+R15
+R16
+!i113 1
+R17
+R18
+Edecod_vhd_vec_tst
+Z44 w1572287460
+R6
+R7
+R41
+Z45 8Waveform1.vwf.vht
+Z46 FWaveform1.vwf.vht
+l0
+L31
+V^SoBg[oGeKJgVo6?Xm?112
+!s100 DS;`I4nd<Wc1fP5hFj6VM3
+R12
+32
+Z47 !s110 1572287464
+!i10b 1
+Z48 !s108 1572287464.000000
+Z49 !s90 -work|work|Waveform1.vwf.vht|
+Z50 !s107 Waveform1.vwf.vht|
+!i113 1
+R17
+R18
+Adecod_arch
+R6
+R7
+DEx4 work 17 decod_vhd_vec_tst 0 22 ^SoBg[oGeKJgVo6?Xm?112
+l56
+L33
+VN3f@Bleeaf1PGWoQ_2[b01
+!s100 naIl49ZA>K>1zFKNM1B4c0
+R12
+32
+R47
+!i10b 1
+R48
+R49
+R50
+!i113 1
+R17
+R18
 Edemux_4x8
-Z40 w1571309860
+Z51 w1571309860
 R2
 R3
 R4
@@ -290,9 +378,9 @@ VQeJ=]<X3DQoP<nWR36h:[2
 !s100 QTbBh4J;7]8kJR>nKFWED3
 R12
 32
-Z41 !s110 1571309861
+Z52 !s110 1571309861
 !i10b 1
-Z42 !s108 1571309861.000000
+Z53 !s108 1571309861.000000
 R15
 R16
 !i113 1
@@ -313,32 +401,32 @@ VBaS[@2idT3]^VE7^Bn>Mb2
 !s100 O:98MWnQ342LYElS:Y0kT2
 R12
 32
-R41
+R52
 !i10b 1
-R42
+R53
 R15
 R16
 !i113 1
 R17
 R18
 Edemux_4x8_vhd_vec_tst
-Z43 w1571309857
+Z54 w1571309857
 R6
 R7
 R0
-Z44 8Waveform.vwf.vht
-Z45 FWaveform.vwf.vht
+Z55 8Waveform.vwf.vht
+Z56 FWaveform.vwf.vht
 l0
 L31
 VQeQV;^o>V;2HAz5JkmfMg2
 !s100 ]0zE11bkC4UH[h=m692n31
 R12
 32
-R41
+R52
 !i10b 1
-R42
-Z46 !s90 -work|work|Waveform.vwf.vht|
-Z47 !s107 Waveform.vwf.vht|
+R53
+Z57 !s90 -work|work|Waveform.vwf.vht|
+Z58 !s107 Waveform.vwf.vht|
 !i113 1
 R17
 R18
@@ -352,37 +440,37 @@ V^_o]8oP@QQU9E??]Po9Hf0
 !s100 GcZg?gKG@TaRmkN67EAmc2
 R12
 32
-R41
+R52
 !i10b 1
-R42
-R46
-R47
+R53
+R57
+R58
 !i113 1
 R17
 R18
 Erelogiodigital
-Z48 w1572135066
+Z59 w1572306135
 R3
 R5
 R8
 R2
-Z49 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+Z60 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
 R4
 R6
 R7
-Z50 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
-R9
+Z61 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+R41
 R10
 R11
 l0
 L38
-VG1A9Va@j^AI09hg1CNZV:0
-!s100 =Xb[H=dIX3L1lZRLGDUbP0
+V9kj5ebdl`<BFF:8S=4nId1
+!s100 [JLRQ20P0HRVLXT=X?5CQ1
 R12
 32
-Z51 !s110 1572135067
+Z62 !s110 1572306137
 !i10b 1
-Z52 !s108 1572135067.000000
+Z63 !s108 1572306137.000000
 R15
 R16
 !i113 1
@@ -393,62 +481,62 @@ R3
 R5
 R8
 R2
-R49
+R60
 R4
 R6
 R7
-R50
-DEx4 work 14 relogiodigital 0 22 G1A9Va@j^AI09hg1CNZV:0
-l312
-L104
-V1nK;AhCig2iGnj6`Fo2<X2
-!s100 RU?A`nMR?h3?9^mF0<8Aj1
+R61
+DEx4 work 14 relogiodigital 0 22 9kj5ebdl`<BFF:8S=4nId1
+l298
+L100
+VX;EHD=>f=YhUEY5[dI:<n0
+!s100 hn::]HGn^c`ocI1;?gYLa3
 R12
 32
-R51
+R62
 !i10b 1
-R52
+R63
 R15
 R16
 !i113 1
 R17
 R18
 Erelogiodigital_vhd_vec_tst
-Z53 w1572135064
+Z64 w1572306132
 R6
 R7
-R9
-R44
-R45
+R41
+Z65 8Waveform7.vwf.vht
+Z66 FWaveform7.vwf.vht
 l0
 L31
 V;jU8ObQRIS<4KRFDXBH9l1
 !s100 M>F`HV56TzNP0?VZ3^2<g2
 R12
 32
-R51
+R62
 !i10b 1
-R52
-R46
-R47
+R63
+Z67 !s90 -work|work|Waveform7.vwf.vht|
+Z68 !s107 Waveform7.vwf.vht|
 !i113 1
 R17
 R18
 Arelogiodigital_arch
 R6
 R7
-Z54 DEx4 work 26 relogiodigital_vhd_vec_tst 0 22 ;jU8ObQRIS<4KRFDXBH9l1
+Z69 DEx4 work 26 relogiodigital_vhd_vec_tst 0 22 ;jU8ObQRIS<4KRFDXBH9l1
 l60
 L33
-Vf2=`6C26k3iA@h1bJ<[Lz0
-!s100 2KdDBKziP@N>HWNW[Y<:73
+VA]8eOL5=]Knf>9F0I@:NM0
+!s100 Wg307?AdeFMl?>6[:OgkW2
 R12
 32
-R51
+R62
 !i10b 1
-R52
-R46
-R47
+R63
+R67
+R68
 !i113 1
 R17
 R18
