@@ -1704,6 +1704,77 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 152 160))
 	)
 )
+(symbol
+	(rect 744 328 888 504)
+	(text "bitvectortobit" (rect 5 0 69 12)(font "Arial" ))
+	(text "inst13" (rect 8 160 36 177)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "E[7..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "E[7..0]" (rect 21 27 54 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "E1" (rect 0 0 12 12)(font "Arial" ))
+		(text "E1" (rect 113 27 125 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32))
+	)
+	(port
+		(pt 144 48)
+		(output)
+		(text "E2" (rect 0 0 12 12)(font "Arial" ))
+		(text "E2" (rect 113 43 125 55)(font "Arial" ))
+		(line (pt 144 48)(pt 128 48))
+	)
+	(port
+		(pt 144 64)
+		(output)
+		(text "E3" (rect 0 0 12 12)(font "Arial" ))
+		(text "E3" (rect 113 59 125 71)(font "Arial" ))
+		(line (pt 144 64)(pt 128 64))
+	)
+	(port
+		(pt 144 80)
+		(output)
+		(text "E4" (rect 0 0 12 12)(font "Arial" ))
+		(text "E4" (rect 113 75 125 87)(font "Arial" ))
+		(line (pt 144 80)(pt 128 80))
+	)
+	(port
+		(pt 144 96)
+		(output)
+		(text "E5" (rect 0 0 12 12)(font "Arial" ))
+		(text "E5" (rect 113 91 125 103)(font "Arial" ))
+		(line (pt 144 96)(pt 128 96))
+	)
+	(port
+		(pt 144 112)
+		(output)
+		(text "E6" (rect 0 0 12 12)(font "Arial" ))
+		(text "E6" (rect 113 107 125 119)(font "Arial" ))
+		(line (pt 144 112)(pt 128 112))
+	)
+	(port
+		(pt 144 128)
+		(output)
+		(text "E7" (rect 0 0 12 12)(font "Arial" ))
+		(text "E7" (rect 113 123 125 135)(font "Arial" ))
+		(line (pt 144 128)(pt 128 128))
+	)
+	(port
+		(pt 144 144)
+		(output)
+		(text "E8" (rect 0 0 12 12)(font "Arial" ))
+		(text "E8" (rect 113 139 125 151)(font "Arial" ))
+		(line (pt 144 144)(pt 128 144))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 160))
+	)
+)
 (connector
 	(pt 224 200)
 	(pt 184 200)
@@ -2063,6 +2134,102 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 544 472)
 	(pt 576 472)
+)
+(connector
+	(pt 888 472)
+	(pt 936 472)
+)
+(connector
+	(pt 936 472)
+	(pt 936 432)
+)
+(connector
+	(pt 936 432)
+	(pt 960 432)
+)
+(connector
+	(pt 888 440)
+	(pt 928 440)
+)
+(connector
+	(pt 928 440)
+	(pt 928 288)
+)
+(connector
+	(pt 888 408)
+	(pt 920 408)
+)
+(connector
+	(pt 920 408)
+	(pt 920 144)
+)
+(connector
+	(pt 888 376)
+	(pt 912 376)
+)
+(connector
+	(pt 912 376)
+	(pt 912 0)
+)
+(connector
+	(pt 912 0)
+	(pt 960 0)
+)
+(connector
+	(pt 928 288)
+	(pt 960 288)
+)
+(connector
+	(pt 920 144)
+	(pt 960 144)
+)
+(connector
+	(pt 880 32)
+	(pt 888 32)
+)
+(connector
+	(pt 888 32)
+	(pt 888 -48)
+)
+(connector
+	(pt 888 -48)
+	(pt 960 -48)
+)
+(connector
+	(pt 880 112)
+	(pt 928 112)
+)
+(connector
+	(pt 928 112)
+	(pt 928 96)
+)
+(connector
+	(pt 928 96)
+	(pt 960 96)
+)
+(connector
+	(pt 880 192)
+	(pt 944 192)
+)
+(connector
+	(pt 944 192)
+	(pt 944 240)
+)
+(connector
+	(pt 944 240)
+	(pt 960 240)
+)
+(connector
+	(pt 880 272)
+	(pt 944 272)
+)
+(connector
+	(pt 944 272)
+	(pt 944 384)
+)
+(connector
+	(pt 944 384)
+	(pt 960 384)
 )
 (junction (pt 704 128))
 (junction (pt 704 208))
