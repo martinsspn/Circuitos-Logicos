@@ -116,6 +116,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "alarme",
+					"strict" : false
+				},
+				{
 					"name" : "sel",
 					"strict" : false
 				},

@@ -49,7 +49,7 @@ COMPONENT controladorEnable IS
 PORT(TC1 : IN BIT_VECTOR(1 DOWNTO 0);
 	  SEL1 : IN BIT;
 	  rc1 : IN BIT;
-	  E : IN BIT_VECTOR(3 DOWNTO 0);
+	  E1, E2, E3, E4 : IN BIT_VECTOR(3 DOWNTO 0);
 	  C : OUT BIT_VECTOR(7 DOWNTO 0));
 END COMPONENT;
 
@@ -83,7 +83,7 @@ BEGIN
 	ct : codTeclado PORT MAP(teclas(9), teclas(8), teclas(7), teclas(6), teclas(5), teclas(4), teclas(3), teclas(2), teclas(1), teclas(0), sA(3), sA(2), sA(1), sA(0));
 	dm : demux PORT MAP(sA, tc, sB, sC, sD, sE);
 	
-	ce : controladorEnable PORT MAP(tc, sel, RC, sR, ENABLE);
+	ce : controladorEnable PORT MAP(tc, sel, RC, sN, sO, sP, sQ, ENABLE);
 	
 	dm2_1 : demux_4x8 PORT MAP(sB, sel, sF, sG);  
 	dm2_2 : demux_4x8 PORT MAP(sC, sel, sH, sI);

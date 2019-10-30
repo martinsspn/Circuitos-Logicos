@@ -2,7 +2,7 @@ ENTITY controladorEnable IS
 PORT(TC1 : IN BIT_VECTOR(1 DOWNTO 0);
 	  SEL1 : IN BIT;
 	  rc1 : IN BIT;
-	  E : IN BIT_VECTOR(3 DOWNTO 0);
+	  E, E1, E2, E3, E4 : IN BIT_VECTOR(3 DOWNTO 0);
 	  C : OUT BIT_VECTOR(7 DOWNTO 0));
 END controladorEnable;
 ARCHITECTURE behavior OF controladorEnable IS
@@ -48,19 +48,21 @@ BEGIN
 								END IF;
 							END IF;
 			WHEN '0' => C(7) <= '1';
-							IF(E(3) = '0') THEN
+							IF(E1 =  "1001") THEN
 								C(5) <= '1';
 							ELSE
 								C(5) <= '0';
 							END IF;
 							
-							IF(E(2) = '0') THEN
+							IF(E2 = "0101" AND E1 = "1001") THEN
 								C(3) <= '1';
 							ELSE
 								C(3) <= '0';
 							END IF;
 							
-							IF(E(1) = '0') THEN
+							IF(E3 = "1001" AND E4 /= "0010" AND E2 = "0101" AND E1 = "1001") THEN
+								C(1) <= '1';
+							ELSIF(E3 = "0011" AND E4 = "0010" AND E2 = "0101" AND E1 = "1001") THEN
 								C(1) <= '1';
 							ELSE
 								C(1) <= '0';
