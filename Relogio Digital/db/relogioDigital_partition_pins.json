@@ -1,0 +1,181 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "H1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "H1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "H1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "H1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "H1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "H1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "H1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "H0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "M1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "M0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "alarme",
+					"strict" : false
+				},
+				{
+					"name" : "sel",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[7]",
+					"strict" : false
+				},
+				{
+					"name" : "tc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RC",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[9]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "teclas[8]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,452 @@
+Analysis & Synthesis report for relogioDigital
+Tue Oct 29 21:19:59 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "controladorEnable:ce"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Oct 29 21:19:59 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; relogioDigital                              ;
+; Top-level Entity Name           ; RelogioDigital                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 32                                          ;
+; Total pins                      ; 44                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; RelogioDigital     ; relogioDigital     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------+---------+
+; demux_4x8.vhd                    ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_4x8.vhd          ;         ;
+; RelogioDigital.vhd               ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd     ;         ;
+; controladorEnable.vhd            ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd  ;         ;
+; multplex.vhd                     ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/multplex.vhd           ;         ;
+; comparador.vhd                   ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/comparador.vhd         ;         ;
+; controladorCounter.vhd           ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd ;         ;
+; decod.vhd                        ; yes             ; User VHDL File        ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/decod.vhd              ;         ;
+; codteclado.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/codteclado.vhd         ;         ;
+; demux.vhd                        ; yes             ; Auto-Found VHDL File  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux.vhd              ;         ;
+; demux_1x4.vhd                    ; yes             ; Auto-Found VHDL File  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_1x4.vhd          ;         ;
+; counter_wbits.vhd                ; yes             ; Auto-Found VHDL File  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/counter_wbits.vhd      ;         ;
+; reg_pp_wbits.vhd                 ; yes             ; Auto-Found VHDL File  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/reg_pp_wbits.vhd       ;         ;
++----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 65        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 111       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 19        ;
+;     -- 5 input functions                    ; 2         ;
+;     -- 4 input functions                    ; 27        ;
+;     -- <=3 input functions                  ; 63        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 32        ;
+;                                             ;           ;
+; I/O pins                                    ; 44        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; sel~input ;
+; Maximum fan-out                             ; 41        ;
+; Total fan-out                               ; 656       ;
+; Average fan-out                             ; 2.84      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name        ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+--------------------+--------------+
+; |RelogioDigital              ; 111 (0)             ; 32 (0)                    ; 0                 ; 0          ; 44   ; 0            ; |RelogioDigital                         ; RelogioDigital     ; work         ;
+;    |codTeclado:ct|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|codTeclado:ct           ; codTeclado         ; work         ;
+;    |comparador:comp|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|comparador:comp         ; comparador         ; work         ;
+;    |controladorCounter:ctrl| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|controladorCounter:ctrl ; controladorCounter ; work         ;
+;    |controladorEnable:ce|    ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|controladorEnable:ce    ; controladorEnable  ; work         ;
+;    |counter_Wbits:c1|        ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c1        ; counter_Wbits      ; work         ;
+;    |counter_Wbits:c2|        ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c2        ; counter_Wbits      ; work         ;
+;    |counter_Wbits:c3|        ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c3        ; counter_Wbits      ; work         ;
+;    |counter_Wbits:c4|        ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|counter_Wbits:c4        ; counter_Wbits      ; work         ;
+;    |decod:dc1|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc1               ; decod              ; work         ;
+;    |decod:dc2|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc2               ; decod              ; work         ;
+;    |decod:dc3|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc3               ; decod              ; work         ;
+;    |decod:dc4|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|decod:dc4               ; decod              ; work         ;
+;    |demux:dm|                ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|demux:dm                ; demux              ; work         ;
+;       |demux_1x4:d1|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|demux:dm|demux_1x4:d1   ; demux_1x4          ; work         ;
+;       |demux_1x4:d2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|demux:dm|demux_1x4:d2   ; demux_1x4          ; work         ;
+;       |demux_1x4:d3|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|demux:dm|demux_1x4:d3   ; demux_1x4          ; work         ;
+;       |demux_1x4:d4|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|demux:dm|demux_1x4:d4   ; demux_1x4          ; work         ;
+;    |multplex:mt1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|multplex:mt1            ; multplex           ; work         ;
+;    |multplex:mt2|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|multplex:mt2            ; multplex           ; work         ;
+;    |multplex:mt3|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|multplex:mt3            ; multplex           ; work         ;
+;    |multplex:mt4|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|multplex:mt4            ; multplex           ; work         ;
+;    |reg_pp_Wbits:r1|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|reg_pp_Wbits:r1         ; reg_pp_Wbits       ; work         ;
+;    |reg_pp_Wbits:r2|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|reg_pp_Wbits:r2         ; reg_pp_Wbits       ; work         ;
+;    |reg_pp_Wbits:r3|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|reg_pp_Wbits:r3         ; reg_pp_Wbits       ; work         ;
+;    |reg_pp_Wbits:r4|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |RelogioDigital|reg_pp_Wbits:r4         ; reg_pp_Wbits       ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; controladorCounter:ctrl|E[0]                       ; clock               ; yes                    ;
+; controladorEnable:ce|C[0]                          ; RC                  ; yes                    ;
+; controladorCounter:ctrl|E[1]                       ; clock               ; yes                    ;
+; controladorEnable:ce|C[2]                          ; RC                  ; yes                    ;
+; controladorCounter:ctrl|E[2]                       ; clock               ; yes                    ;
+; controladorEnable:ce|C[4]                          ; RC                  ; yes                    ;
+; controladorCounter:ctrl|E[3]                       ; clock               ; yes                    ;
+; controladorEnable:ce|C[7]                          ; VCC                 ; yes                    ;
+; controladorEnable:ce|C[6]                          ; RC                  ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 32    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |RelogioDigital|counter_Wbits:c2|q[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controladorEnable:ce"                                                                                                                       ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; e    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 32                          ;
+;     ENA CLR SCLR SLD  ; 16                          ;
+;     ENA SCLR          ; 16                          ;
+; arriav_lcell_comb     ; 111                         ;
+;     normal            ; 111                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 27                          ;
+;         5 data inputs ; 2                           ;
+;         6 data inputs ; 19                          ;
+; boundary_port         ; 44                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.78                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Oct 29 21:19:35 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogioDigital -c relogioDigital
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file demux_4x8.vhd
+    Info (12022): Found design unit 1: demux_4x8-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 6
+    Info (12023): Found entity 1: demux_4x8 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file relogiodigital.vhd
+    Info (12022): Found design unit 1: RelogioDigital-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 14
+    Info (12023): Found entity 1: RelogioDigital File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file controladorenable.vhd
+    Info (12022): Found design unit 1: controladorEnable-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 8
+    Info (12023): Found entity 1: controladorEnable File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file multplex.vhd
+    Info (12022): Found design unit 1: multplex-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/multplex.vhd Line: 6
+    Info (12023): Found entity 1: multplex File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/multplex.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
+    Info (12022): Found design unit 1: comparador-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/comparador.vhd Line: 5
+    Info (12023): Found entity 1: comparador File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/comparador.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file controladorcounter.vhd
+    Info (12022): Found design unit 1: controladorCounter-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 9
+    Info (12023): Found entity 1: controladorCounter File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decod.vhd
+    Info (12022): Found design unit 1: decod-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/decod.vhd Line: 5
+    Info (12023): Found entity 1: decod File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/decod.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file bittobitvector.vhd
+    Info (12022): Found design unit 1: bittobitvector-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/bittobitvector.vhd Line: 6
+    Info (12023): Found entity 1: bittobitvector File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/bittobitvector.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file bitvectortobit.vhd
+    Info (12022): Found design unit 1: bitvectortobit-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/bitvectortobit.vhd Line: 6
+    Info (12023): Found entity 1: bitvectortobit File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/bitvectortobit.vhd Line: 1
+Info (12127): Elaborating entity "RelogioDigital" for the top level hierarchy
+Warning (12125): Using design file codteclado.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: codTeclado-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/codteclado.vhd Line: 5
+    Info (12023): Found entity 1: codTeclado File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/codteclado.vhd Line: 1
+Info (12128): Elaborating entity "codTeclado" for hierarchy "codTeclado:ct" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 83
+Warning (12125): Using design file demux.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: demux-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux.vhd Line: 6
+    Info (12023): Found entity 1: demux File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux.vhd Line: 1
+Info (12128): Elaborating entity "demux" for hierarchy "demux:dm" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 84
+Warning (12125): Using design file demux_1x4.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: demux_1x4-structural File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_1x4.vhd Line: 6
+    Info (12023): Found entity 1: demux_1x4 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_1x4.vhd Line: 1
+Info (12128): Elaborating entity "demux_1x4" for hierarchy "demux:dm|demux_1x4:d1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux.vhd Line: 18
+Info (12128): Elaborating entity "controladorEnable" for hierarchy "controladorEnable:ce" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(51): signal "E1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 51
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(57): signal "E2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(57): signal "E1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(63): signal "E3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(63): signal "E4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(63): signal "E2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(63): signal "E1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(65): signal "E3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(65): signal "E4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(65): signal "E2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at controladorEnable.vhd(65): signal "E1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 65
+Warning (10631): VHDL Process Statement warning at controladorEnable.vhd(10): inferring latch(es) for signal or variable "C", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[0]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[1]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[2]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[3]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[4]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[5]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[6]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (10041): Inferred latch for "C[7]" at controladorEnable.vhd(10) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Info (12128): Elaborating entity "demux_4x8" for hierarchy "demux_4x8:dm2_1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at demux_4x8.vhd(11): signal "E" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 11
+Warning (10492): VHDL Process Statement warning at demux_4x8.vhd(15): signal "E" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/demux_4x8.vhd Line: 15
+Warning (12125): Using design file counter_wbits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: counter_Wbits-arch_1 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/counter_wbits.vhd Line: 12
+    Info (12023): Found entity 1: counter_Wbits File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/counter_wbits.vhd Line: 4
+Info (12128): Elaborating entity "counter_Wbits" for hierarchy "counter_Wbits:c1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 94
+Info (12128): Elaborating entity "controladorCounter" for hierarchy "controladorCounter:ctrl" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at controladorCounter.vhd(13): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 13
+Warning (10631): VHDL Process Statement warning at controladorCounter.vhd(11): inferring latch(es) for signal or variable "E", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 11
+Info (10041): Inferred latch for "E[0]" at controladorCounter.vhd(11) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 11
+Info (10041): Inferred latch for "E[1]" at controladorCounter.vhd(11) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 11
+Info (10041): Inferred latch for "E[2]" at controladorCounter.vhd(11) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 11
+Info (10041): Inferred latch for "E[3]" at controladorCounter.vhd(11) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorCounter.vhd Line: 11
+Warning (12125): Using design file reg_pp_wbits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: reg_pp_Wbits-arch_1 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/reg_pp_wbits.vhd Line: 7
+    Info (12023): Found entity 1: reg_pp_Wbits File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/reg_pp_wbits.vhd Line: 1
+Info (12128): Elaborating entity "reg_pp_Wbits" for hierarchy "reg_pp_Wbits:r1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 101
+Info (12128): Elaborating entity "multplex" for hierarchy "multplex:mt1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at multplex.vhd(11): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/multplex.vhd Line: 11
+Warning (10492): VHDL Process Statement warning at multplex.vhd(13): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/multplex.vhd Line: 13
+Info (12128): Elaborating entity "comparador" for hierarchy "comparador:comp" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 111
+Info (12128): Elaborating entity "decod" for hierarchy "decod:dc1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 113
+Warning (14026): LATCH primitive "controladorEnable:ce|C[1]" is permanently enabled File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Warning (14026): LATCH primitive "controladorEnable:ce|C[3]" is permanently enabled File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Warning (14026): LATCH primitive "controladorEnable:ce|C[5]" is permanently enabled File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/controladorEnable.vhd Line: 10
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "teclas[0]" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/RelogioDigital.vhd Line: 5
+Info (21057): Implemented 171 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 127 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Tue Oct 29 21:19:59 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:42
+
+

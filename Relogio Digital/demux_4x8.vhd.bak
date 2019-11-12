@@ -1,0 +1,15 @@
+ENTITY demux_4x8 IS
+PORT(E : IN BIT_VECTOR(3 DOWNTO 0);
+	  sel : IN BIT;
+	  S1, S2 : IN BIT_VECTOR(3 DOWNTO 0);
+END RelogioDigital;
+ARCHITECTURE behavior OF demux_4x8 IS
+BEGIN
+	PROCESS(sel)
+	BEGIN
+		IF (sel = '0') THEN
+			S1 <= E;
+		ELSE
+			S2 <= E;
+	END PROCESS;
+END behavior;

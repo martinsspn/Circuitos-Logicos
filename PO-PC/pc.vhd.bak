@@ -1,0 +1,7 @@
+ENTITY pc IS
+PORT()
+END pc;
+
+ARCHITECTURE structural OF pc IS
+BEGIN
+END structural;
