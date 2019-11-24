@@ -1,0 +1,649 @@
+Analysis & Synthesis report for PO-PC
+Sun Nov 24 00:05:35 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: po:po1|comparadorMaior:cmpMaior
+ 12. Parameter Settings for User Entity Instance: po:po1|comparadorMenor:cmpMenor
+ 13. Parameter Settings for User Entity Instance: po:po1|somador:smd
+ 14. Parameter Settings for User Entity Instance: po:po1|comparadorMaior:cmpM2
+ 15. Parameter Settings for Inferred Entity Instance: po:po1|divisor:div|lpm_divide:Div0
+ 16. Port Connectivity Checks: "po:po1|enableQuantidade:en"
+ 17. Port Connectivity Checks: "leitorMemoria:LM"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Nov 24 00:05:34 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; PO-PC                                       ;
+; Top-level Entity Name           ; topLevel                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 73                                          ;
+; Total pins                      ; 26                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; topLevel           ; PO-PC              ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; pc.vhd                           ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd                 ;         ;
+; po.vhd                           ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd                 ;         ;
+; somador.vhd                      ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd            ;         ;
+; topLevel.vhd                     ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd           ;         ;
+; divisor.vhd                      ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd            ;         ;
+; fte.vhd                          ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd                ;         ;
+; comparadorMenor.vhd              ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadorMenor.vhd    ;         ;
+; leitorMemoria.vhd                ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd      ;         ;
+; enableQuantidade.vhd             ; yes             ; User VHDL File               ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/enableQuantidade.vhd   ;         ;
+; reg_pp_wbits.vhd                 ; yes             ; Auto-Found VHDL File         ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/reg_pp_wbits.vhd       ;         ;
+; comparadormaior.vhd              ; yes             ; Auto-Found VHDL File         ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadormaior.vhd    ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf             ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc            ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc             ;         ;
+; db/lpm_divide_3oo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/lpm_divide_3oo.tdf  ;         ;
+; db/abs_divider_cag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/abs_divider_cag.tdf ;         ;
+; db/alt_u_div_8te.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/alt_u_div_8te.tdf   ;         ;
+; db/lpm_abs_on9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/lpm_abs_on9.tdf     ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 107         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 173         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 27          ;
+;     -- 5 input functions                    ; 10          ;
+;     -- 4 input functions                    ; 25          ;
+;     -- <=3 input functions                  ; 111         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 73          ;
+;                                             ;             ;
+; I/O pins                                    ; 26          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 73          ;
+; Total fan-out                               ; 877         ;
+; Average fan-out                             ; 2.94        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                      ; Entity Name     ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |topLevel                                   ; 173 (0)             ; 73 (0)                    ; 0                 ; 0          ; 26   ; 0            ; |topLevel                                                                                                                ; topLevel        ; work         ;
+;    |fte:ft|                                 ; 6 (6)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|fte:ft                                                                                                         ; fte             ; work         ;
+;    |leitorMemoria:LM|                       ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|leitorMemoria:LM                                                                                               ; leitorMemoria   ; work         ;
+;    |pc:pc1|                                 ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|pc:pc1                                                                                                         ; pc              ; work         ;
+;    |po:po1|                                 ; 106 (0)             ; 43 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1                                                                                                         ; po              ; work         ;
+;       |comparadorMaior:cmpM2|               ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|comparadorMaior:cmpM2                                                                                   ; comparadorMaior ; work         ;
+;       |comparadorMaior:cmpMaior|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|comparadorMaior:cmpMaior                                                                                ; comparadorMaior ; work         ;
+;       |comparadorMenor:cmpMenor|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|comparadorMenor:cmpMenor                                                                                ; comparadorMenor ; work         ;
+;       |divisor:div|                         ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|divisor:div                                                                                             ; divisor         ; work         ;
+;          |lpm_divide:Div0|                  ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|divisor:div|lpm_divide:Div0                                                                             ; lpm_divide      ; work         ;
+;             |lpm_divide_3oo:auto_generated| ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|divisor:div|lpm_divide:Div0|lpm_divide_3oo:auto_generated                                               ; lpm_divide_3oo  ; work         ;
+;                |abs_divider_cag:divider|    ; 82 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|divisor:div|lpm_divide:Div0|lpm_divide_3oo:auto_generated|abs_divider_cag:divider                       ; abs_divider_cag ; work         ;
+;                   |alt_u_div_8te:divider|   ; 82 (82)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|divisor:div|lpm_divide:Div0|lpm_divide_3oo:auto_generated|abs_divider_cag:divider|alt_u_div_8te:divider ; alt_u_div_8te   ; work         ;
+;       |reg_pp_Wbits:r1|                     ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|reg_pp_Wbits:r1                                                                                         ; reg_pp_Wbits    ; work         ;
+;       |reg_pp_Wbits:rgDivisor|              ; 6 (6)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|reg_pp_Wbits:rgDivisor                                                                                  ; reg_pp_Wbits    ; work         ;
+;       |reg_pp_Wbits:rgMaior|                ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|reg_pp_Wbits:rgMaior                                                                                    ; reg_pp_Wbits    ; work         ;
+;       |reg_pp_Wbits:rgMenor|                ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|reg_pp_Wbits:rgMenor                                                                                    ; reg_pp_Wbits    ; work         ;
+;       |reg_pp_Wbits:rgSoma|                 ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|reg_pp_Wbits:rgSoma                                                                                     ; reg_pp_Wbits    ; work         ;
+;       |reg_pp_Wbits:rg|                     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|reg_pp_Wbits:rg                                                                                         ; reg_pp_Wbits    ; work         ;
+;       |somador:smd|                         ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|po:po1|somador:smd                                                                                             ; somador         ; work         ;
+;    |reg_pp_Wbits:rMaior|                    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|reg_pp_Wbits:rMaior                                                                                            ; reg_pp_Wbits    ; work         ;
+;    |reg_pp_Wbits:rMenor|                    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|reg_pp_Wbits:rMenor                                                                                            ; reg_pp_Wbits    ; work         ;
+;    |reg_pp_Wbits:rgM|                       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |topLevel|reg_pp_Wbits:rgM                                                                                               ; reg_pp_Wbits    ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; pc:pc1|enableRMaior                                 ; pc:pc1|Mux1         ; yes                    ;
+; pc:pc1|enableRMenor                                 ; pc:pc1|Mux5         ; yes                    ;
+; pc:pc1|enableRQTD                                   ; pc:pc1|Mux1         ; yes                    ;
+; pc:pc1|tx                                           ; pc:pc1|Mux9         ; yes                    ;
+; pc:pc1|lerMem[0]                                    ; pc:pc1|Mux13        ; yes                    ;
+; pc:pc1|lerMem[1]                                    ; pc:pc1|Mux15        ; yes                    ;
+; pc:pc1|lerMem[2]                                    ; pc:pc1|Mux17        ; yes                    ;
+; pc:pc1|lerMem[3]                                    ; pc:pc1|Mux19        ; yes                    ;
+; pc:pc1|lerMem[4]                                    ; pc:pc1|Mux21        ; yes                    ;
+; pc:pc1|lerMem[5]                                    ; pc:pc1|Mux23        ; yes                    ;
+; pc:pc1|lerMem[6]                                    ; pc:pc1|Mux25        ; yes                    ;
+; pc:pc1|lerMem[7]                                    ; pc:pc1|Mux27        ; yes                    ;
+; pc:pc1|lerMem[8]                                    ; pc:pc1|Mux29        ; yes                    ;
+; pc:pc1|lerMem[9]                                    ; pc:pc1|Mux31        ; yes                    ;
+; pc:pc1|enabler1                                     ; pc:pc1|Mux33        ; yes                    ;
+; pc:pc1|enableSoma                                   ; pc:pc1|Mux11        ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------+----------------------------------------------+
+; Register name                         ; Reason for Removal                           ;
++---------------------------------------+----------------------------------------------+
+; po:po1|reg_pp_Wbits:rgMaior|q[7]      ; Merged with po:po1|reg_pp_Wbits:rgMaior|q[5] ;
+; po:po1|reg_pp_Wbits:rgMenor|q[7]      ; Merged with po:po1|reg_pp_Wbits:rgMenor|q[5] ;
+; po:po1|reg_pp_Wbits:r1|q[7]           ; Merged with po:po1|reg_pp_Wbits:r1|q[5]      ;
+; po:po1|reg_pp_Wbits:rgDivisor|q[6,7]  ; Stuck at GND due to stuck port data_in       ;
+; Total Number of Removed Registers = 5 ;                                              ;
++---------------------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 73    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: po:po1|comparadorMaior:cmpMaior ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; w              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: po:po1|comparadorMenor:cmpMenor ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; w              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: po:po1|somador:smd ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; w              ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: po:po1|comparadorMaior:cmpM2 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; w              ; 8     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: po:po1|divisor:div|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_3oo ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "po:po1|enableQuantidade:en"                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; s    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "leitorMemoria:LM" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; e0[7..3] ; Input ; Info     ; Stuck at GND   ;
+; e0[2]    ; Input ; Info     ; Stuck at VCC   ;
+; e0[1]    ; Input ; Info     ; Stuck at GND   ;
+; e0[0]    ; Input ; Info     ; Stuck at VCC   ;
+; e1[5..4] ; Input ; Info     ; Stuck at GND   ;
+; e1[7]    ; Input ; Info     ; Stuck at GND   ;
+; e1[6]    ; Input ; Info     ; Stuck at VCC   ;
+; e1[3]    ; Input ; Info     ; Stuck at VCC   ;
+; e1[2]    ; Input ; Info     ; Stuck at GND   ;
+; e1[1]    ; Input ; Info     ; Stuck at VCC   ;
+; e1[0]    ; Input ; Info     ; Stuck at GND   ;
+; e2[1..0] ; Input ; Info     ; Stuck at VCC   ;
+; e2[7..2] ; Input ; Info     ; Stuck at GND   ;
+; e3[7..4] ; Input ; Info     ; Stuck at GND   ;
+; e3[3]    ; Input ; Info     ; Stuck at VCC   ;
+; e3[2]    ; Input ; Info     ; Stuck at GND   ;
+; e3[1]    ; Input ; Info     ; Stuck at VCC   ;
+; e3[0]    ; Input ; Info     ; Stuck at GND   ;
+; e4       ; Input ; Info     ; Stuck at VCC   ;
+; e5[7..5] ; Input ; Info     ; Stuck at GND   ;
+; e5[3..0] ; Input ; Info     ; Stuck at GND   ;
+; e5[4]    ; Input ; Info     ; Stuck at VCC   ;
+; e6[7]    ; Input ; Info     ; Stuck at VCC   ;
+; e6[6]    ; Input ; Info     ; Stuck at GND   ;
+; e6[5]    ; Input ; Info     ; Stuck at VCC   ;
+; e6[4]    ; Input ; Info     ; Stuck at GND   ;
+; e6[3]    ; Input ; Info     ; Stuck at VCC   ;
+; e6[2]    ; Input ; Info     ; Stuck at GND   ;
+; e6[1]    ; Input ; Info     ; Stuck at VCC   ;
+; e6[0]    ; Input ; Info     ; Stuck at GND   ;
+; e7[7..1] ; Input ; Info     ; Stuck at GND   ;
+; e7[0]    ; Input ; Info     ; Stuck at VCC   ;
+; e8[7..3] ; Input ; Info     ; Stuck at GND   ;
+; e8[2]    ; Input ; Info     ; Stuck at VCC   ;
+; e8[1]    ; Input ; Info     ; Stuck at GND   ;
+; e8[0]    ; Input ; Info     ; Stuck at VCC   ;
+; e9[2..0] ; Input ; Info     ; Stuck at VCC   ;
+; e9[7..3] ; Input ; Info     ; Stuck at GND   ;
++----------+-------+----------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 73                          ;
+;     CLR               ; 6                           ;
+;     ENA               ; 45                          ;
+;     ENA SLD           ; 16                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 173                         ;
+;     arith             ; 54                          ;
+;         0 data inputs ; 11                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 10                          ;
+;     normal            ; 114                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 10                          ;
+;         6 data inputs ; 27                          ;
+;     shared            ; 5                           ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
+; boundary_port         ; 26                          ;
+;                       ;                             ;
+; Max LUT depth         ; 11.30                       ;
+; Average LUT depth     ; 5.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Nov 24 00:05:17 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PO-PC -c PO-PC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: pc-arch File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 13
+    Info (12023): Found entity 1: pc File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file po.vhd
+    Info (12022): Found design unit 1: po-arch File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 17
+    Info (12023): Found entity 1: po File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 4
+Warning (12019): Can't analyze file -- file fsm_go_back.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
+    Info (12022): Found design unit 1: somador-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd Line: 10
+    Info (12023): Found entity 1: somador File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
+    Info (12022): Found design unit 1: topLevel-arch File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd Line: 11
+    Info (12023): Found entity 1: topLevel File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd Line: 4
+Warning (12019): Can't analyze file -- file comparador.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
+    Info (12022): Found design unit 1: divisor-arch File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd Line: 9
+    Info (12023): Found entity 1: divisor File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fte.vhd
+    Info (12022): Found design unit 1: fte-arch_1 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 10
+    Info (12023): Found entity 1: fte File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file multplex.vhd
+    Info (12022): Found design unit 1: multplex-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/multplex.vhd Line: 6
+    Info (12023): Found entity 1: multplex File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/multplex.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file comparadormenor.vhd
+    Info (12022): Found design unit 1: comparadorMenor-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadorMenor.vhd Line: 11
+    Info (12023): Found entity 1: comparadorMenor File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadorMenor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file leitormemoria.vhd
+    Info (12022): Found design unit 1: leitorMemoria-arch File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 7
+    Info (12023): Found entity 1: leitorMemoria File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 1
+Warning (12019): Can't analyze file -- file deslocador.vhd is missing
+Warning (12019): Can't analyze file -- file subtrator.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file enablequantidade.vhd
+    Info (12022): Found design unit 1: enableQuantidade-arch File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/enableQuantidade.vhd Line: 6
+    Info (12023): Found entity 1: enableQuantidade File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/enableQuantidade.vhd Line: 1
+Warning (10645): VHDL type inferencing warning at divisor.vhd(16): two visible identifiers match "To_StdLogicVector" because the actual at position 0 has an ambiguous type - it could be "bit_vector" or "std_ulogic_vector", assuming "bit_vector" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd Line: 16
+Warning (10645): VHDL type inferencing warning at fte.vhd(16): two visible identifiers match "To_StdLogicVector" because the actual at position 0 has an ambiguous type - it could be "bit_vector" or "std_ulogic_vector", assuming "bit_vector" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 16
+Warning (10645): VHDL type inferencing warning at fte.vhd(19): two visible identifiers match "To_StdLogicVector" because the actual at position 0 has an ambiguous type - it could be "bit_vector" or "std_ulogic_vector", assuming "bit_vector" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 19
+Warning (10645): VHDL type inferencing warning at fte.vhd(20): two visible identifiers match "To_StdLogicVector" because the actual at position 0 has an ambiguous type - it could be "bit_vector" or "std_ulogic_vector", assuming "bit_vector" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 20
+Info (12127): Elaborating entity "topLevel" for the top level hierarchy
+Info (12128): Elaborating entity "fte" for hierarchy "fte:ft" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd Line: 86
+Info (12128): Elaborating entity "pc" for hierarchy "pc:pc1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd Line: 87
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enabler1", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "lerMem", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enableSoma", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "tx", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enableQTD", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enableRMenor", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enableDivisao", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enableRMaior", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at pc.vhd(17): inferring latch(es) for signal or variable "enableRQTD", which holds its previous value in one or more paths through the process File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enableRQTD" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enableRMaior" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enableDivisao" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enableRMenor" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enableQTD" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "tx" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enableSoma" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[0]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[1]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[2]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[3]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[4]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[5]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[6]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[7]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[8]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "lerMem[9]" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (10041): Inferred latch for "enabler1" at pc.vhd(17) File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+Info (12128): Elaborating entity "leitorMemoria" for hierarchy "leitorMemoria:LM" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(12): signal "e0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 12
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(13): signal "e1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 13
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(14): signal "e2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 14
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(15): signal "e3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 15
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(16): signal "e4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 16
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(17): signal "e5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(18): signal "e6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(19): signal "e7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(20): signal "e8" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at leitorMemoria.vhd(21): signal "e9" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/leitorMemoria.vhd Line: 21
+Info (12128): Elaborating entity "po" for hierarchy "po:po1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/topLevel.vhd Line: 89
+Warning (10036): Verilog HDL or VHDL warning at po.vhd(63): object "enQTD" assigned a value but never read File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 63
+Warning (12125): Using design file reg_pp_wbits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: reg_pp_Wbits-arch_1 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/reg_pp_wbits.vhd Line: 7
+    Info (12023): Found entity 1: reg_pp_Wbits File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/reg_pp_wbits.vhd Line: 1
+Info (12128): Elaborating entity "reg_pp_Wbits" for hierarchy "po:po1|reg_pp_Wbits:r1" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 67
+Warning (12125): Using design file comparadormaior.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: comparadorMaior-behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadormaior.vhd Line: 10
+    Info (12023): Found entity 1: comparadorMaior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadormaior.vhd Line: 4
+Info (12128): Elaborating entity "comparadorMaior" for hierarchy "po:po1|comparadorMaior:cmpMaior" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 70
+Info (12128): Elaborating entity "comparadorMenor" for hierarchy "po:po1|comparadorMenor:cmpMenor" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at comparadorMenor.vhd(18): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadorMenor.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at comparadorMenor.vhd(18): signal "b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/comparadorMenor.vhd Line: 18
+Info (12128): Elaborating entity "somador" for hierarchy "po:po1|somador:smd" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at somador.vhd(17): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at somador.vhd(19): signal "b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at somador.vhd(20): signal "y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at somador.vhd(20): signal "z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/somador.vhd Line: 20
+Info (12128): Elaborating entity "divisor" for hierarchy "po:po1|divisor:div" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 90
+Info (12128): Elaborating entity "enableQuantidade" for hierarchy "po:po1|enableQuantidade:en" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/po.vhd Line: 94
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "po:po1|divisor:div|Div0" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd Line: 17
+Info (12130): Elaborated megafunction instantiation "po:po1|divisor:div|lpm_divide:Div0" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd Line: 17
+Info (12133): Instantiated megafunction "po:po1|divisor:div|lpm_divide:Div0" with the following parameter: File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/divisor.vhd Line: 17
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3oo.tdf
+    Info (12023): Found entity 1: lpm_divide_3oo File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/lpm_divide_3oo.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_cag.tdf
+    Info (12023): Found entity 1: abs_divider_cag File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/abs_divider_cag.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_8te.tdf
+    Info (12023): Found entity 1: alt_u_div_8te File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/alt_u_div_8te.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_on9.tdf
+    Info (12023): Found entity 1: lpm_abs_on9 File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/db/lpm_abs_on9.tdf Line: 22
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "pc:pc1|enableRQTD" merged with LATCH primitive "pc:pc1|enableRMaior" File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 10
+Warning (13012): Latch pc:pc1|enableRMaior has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[2] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|enableRMenor has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[1] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[0] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[5] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[1] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[0] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[2] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[5] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[3] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[0] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[4] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[5] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[5] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[5] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[6] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[4] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[7] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[0] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[8] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[0] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|lerMem[9] has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[0] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|enabler1 has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[5] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Warning (13012): Latch pc:pc1|enableSoma has unsafe behavior File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/pc.vhd Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fte:ft|state_reg[2] File: C:/Users/marti/OneDrive/Documentos/Circuitos-Logicos/PO-PC/fte.vhd Line: 15
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 253 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 227 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 4869 megabytes
+    Info: Processing ended: Sun Nov 24 00:05:35 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:31
+
+

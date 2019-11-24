@@ -1,7 +1,70 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.std_logic_unsigned.ALL;
 ENTITY po IS
-PORT()
+PORT(e1: IN BIT_VECTOR(7 DOWNTO 0);
+	  enabler1 : IN BIT;
+	  enableSoma : IN BIT;
+	  enableMaior : IN BIT;
+	  enableMenor : IN BIT;
+	  selMult : IN BIT;
+	  clock : IN BIT;
+	  maior : OUT BIT_VECTOR(7 DOWNTO 0);
+	  menor : out BIT_VECTOR(7 DOWNTO 0));
 END po;
 
 ARCHITECTURE arch OF po IS
+
+COMPONENT reg_pp_Wbits IS
+PORT (d : IN BIT_VECTOR(7 DOWNTO 0);-- data input
+		clk : IN BIT; -- clock
+		ena : IN BIT; -- enable
+		q : OUT BIT_VECTOR(7 DOWNTO 0));-- data output
+END COMPONENT;
+
+COMPONENT somador IS
+GENERIC(W : NATURAL := 8);
+PORT (a, b : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0); -- data inputs
+		s : OUT STD_LOGIC_VECTOR(W-1 DOWNTO 0)); -- data output
+END COMPONENT;
+
+
+COMPONENT comparadorMaior IS
+GENERIC(W : NATURAL := 8);
+PORT (a, b : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0); -- data inputs
+		gt : OUT STD_LOGIC_VECTOR(w-1 DOWNTO 0)); -- a > b
+END COMPONENT;
+
+COMPONENT comparadorMenor IS
+GENERIC(W : NATURAL := 8);
+PORT (a, b : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0); -- data inputs
+		lt : OUT STD_LOGIC_VECTOR(w-1 DOWNTO 0)); -- a < b
+END COMPONENT;
+
+
+COMPONENT divisor IS
+PORT(a : IN BIT_VECTOR(7 DOWNTO 0);
+	  s : IN BIT_VECTOR(7 DOWNTO 0));
+END COMPONENT;
+
+COMPONENT multplex IS
+PORT(A, B : IN BIT_VECTOR(7 DOWNTO 0);
+	  sel1 : IN BIT;
+	  S : OUT BIT_VECTOR(7 DOWNTO 0));
+END COMPONENT;
+
+SIGNAL ar, br, cr, soma, compMaior, compMenor, smaior, smenor : BIT_VECTOR(7 DOWNTO 0);
+
 BEGIN
+	r1 : reg_pp_Wbits PORT MAP(e1, clock, enabler1, ar);
+	rgSoma : reg_pp_Wbits PORT MAP(br, clock, enableSoma, soma);
+	rgMaior : reg_pp_Wbits PORT MAP(compMaior, clock, enableMaior, smaior); 
+	---mult : multplex PORT MAP(e1, compMenor, selMult, cr);
+	rgMenor : reg_pp_Wbits PORT MAP(CompMaior, clock, enableMenor, smenor);
+	smd : somador PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(soma), to_bitvector(s) => br);
+	cmpMaior : comparadorMaior PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(smaior), to_bitvector(gt) => compMaior);
+	cmpMenor : comparadorMenor PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(smenor), to_bitvector(lt) => compMenor); 
+	maior <= smaior;
+	menor <= smenor;
+
 END arch;

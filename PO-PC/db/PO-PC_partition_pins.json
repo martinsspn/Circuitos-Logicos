@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "maior[0]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[1]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[2]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[3]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[4]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[5]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[6]",
+					"strict" : false
+				},
+				{
+					"name" : "maior[7]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[3]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[4]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[5]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[6]",
+					"strict" : false
+				},
+				{
+					"name" : "menor[7]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[0]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[1]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[2]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[3]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[4]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[5]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[6]",
+					"strict" : false
+				},
+				{
+					"name" : "qtdMaior[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "clearn",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

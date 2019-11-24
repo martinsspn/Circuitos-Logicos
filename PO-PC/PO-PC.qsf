@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC7C7F23C8
-set_global_assignment -name TOP_LEVEL_ENTITY "PO-PC"
+set_global_assignment -name TOP_LEVEL_ENTITY topLevel
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:10:48  NOVEMBER 12, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -48,3 +48,30 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name VHDL_FILE pc.vhd
 set_global_assignment -name VHDL_FILE po.vhd
+set_global_assignment -name VHDL_FILE fsm_go_back.vhd
+set_global_assignment -name VHDL_FILE somador.vhd
+set_global_assignment -name VHDL_FILE topLevel.vhd
+set_global_assignment -name VHDL_FILE comparador.vhd
+set_global_assignment -name VHDL_FILE divisor.vhd
+set_global_assignment -name VHDL_FILE fte.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE fteSimulation.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VHDL_FILE multplex.vhd
+set_global_assignment -name VHDL_FILE comparadorMenor.vhd
+set_global_assignment -name VHDL_FILE leitorMemoria.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
+set_global_assignment -name VHDL_FILE deslocador.vhd
+set_global_assignment -name VHDL_FILE subtrator.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform8.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform9.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE enableQuantidade.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

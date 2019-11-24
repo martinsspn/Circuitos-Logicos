@@ -1,0 +1,88 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.std_logic_unsigned.ALL;
+ENTITY topLevel IS
+PORT(clock : IN BIT;
+	  clearn : IN BIT;
+	  maior, menor : OUT BIT_VECTOR(7 DOWNTO 0);
+	  qtdMaior : OUT BIT_VECTOR(3 DOWNTO 0));
+END topLevel;
+
+ARCHITECTURE arch OF topLevel IS
+
+type memory is array(0 to 9) of bit_vector(7 downto 0);
+
+signal mem : memory;
+
+COMPONENT pc IS
+PORT(clock : IN BIT;
+	  state_reg : IN BIT_VECTOR(4 DOWNTO 0);
+	  lerMem : OUT BIT_VECTOR(9 DOWNTO 0);
+	  enabler1 : OUT BIT;
+	  enableSoma : OUT BIT;
+	  enableMaior : OUT BIT;
+	  enableMenor : OUT BIT;
+	  selMult : OUT BIT;
+	  mostrar : OUT BIT);
+END COMPONENT;
+
+COMPONENT po IS
+PORT(e1: IN BIT_VECTOR(7 DOWNTO 0);
+	  enabler1 : IN BIT;
+	  enableSoma : IN BIT;
+	  enableMaior : IN BIT;
+	  enableMenor : IN BIT;
+	  selMult : IN BIT;
+	  clock : IN BIT;
+	  maior : OUT BIT_VECTOR(7 DOWNTO 0);
+	  menor : out BIT_VECTOR(7 DOWNTO 0));
+END COMPONENT;
+
+COMPONENT fte IS
+PORT (clk : IN BIT; -- clock
+		clrn: IN BIT; -- clear	
+		state_reg : BUFFER STD_LOGIC_VECTOR(4 DOWNTO 0)); -- output
+END COMPONENT;
+
+COMPONENT leitorMemoria IS
+PORT(e0 ,e1, e2, e3, e4, e5, e6, e7, e8, e9 : IN BIT_VECTOR(7 DOWNTO 0);
+	  seletor : IN BIT_VECTOR(9 DOWNTO 0);
+	  saida : OUT BIT_VECTOR(7 DOWNTO 0));
+END COMPONENT;
+
+COMPONENT multplex IS
+PORT(A, B : IN BIT_VECTOR(7 DOWNTO 0);
+	  sel1 : IN BIT;
+	  S : OUT BIT_VECTOR(7 DOWNTO 0));
+END COMPONENT;
+
+SIGNAL a : BIT_VECTOR(4 DOWNTO 0);
+SIGNAL leitor : BIT_VECTOR(9 DOWNTO 0);
+SIGNAL enR1, enSOMA, enMAIOR, enMENOR, sM : BIT;
+SIGNAL ML, m1, m2 : BIT_VECTOR(7 DOWNTO 0);
+SIGNAL m : BIT;
+
+BEGIN
+	
+	mem(0) <= "00100101";
+	mem(1) <= "01001010";
+	mem(2) <= "00010011";
+	mem(3) <= "00101010";
+	mem(4) <= "00000110";
+	mem(5) <= "00010000";
+	mem(6) <= "10101010";
+	mem(7) <= "00000001";
+	mem(8) <= "00100101";
+	mem(9) <= "01100111";
+
+	
+	
+	ft : fte PORT MAP(clock, clearn, to_bitvector(state_reg) => a);
+	pc1 : pc PORT MAP(clock, a, leitor, enR1, enSOMA, enMAIOR, enMENOR, sM, m);
+	LM : leitorMemoria PORT MAP(mem(0), mem(1), mem(2), mem(3), mem(4), mem(5), mem(6), mem(7), mem(8), mem(9), leitor, ML);
+	po1 : po PORT MAP(ML, enR1, enSOMA, enMAIOR, enMENOR, sM, clock, m1, m2);
+	mt : multplex PORT MAP("00000000", m1, m, maior);
+	mt2 : multplex PORT MAP("00000000", m2, m, menor);
+	
+	
+END arch;

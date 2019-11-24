@@ -1,7 +1,163 @@
 ENTITY pc IS
-PORT()
+PORT(clock : IN BIT;
+	  state_reg : IN BIT_VECTOR(4 DOWNTO 0);
+	  lerMem : OUT BIT_VECTOR(9 DOWNTO 0);
+	  enabler1 : OUT BIT;
+	  enableSoma : OUT BIT;
+	  enableMaior : OUT BIT;
+	  enableMenor : OUT BIT;
+	  selMult : OUT BIT;
+	  mostrar : OUT BIT);
 END pc;
+ARCHITECTURE arch OF pc IS
 
-ARCHITECTURE structural OF pc IS
 BEGIN
-END structural;
+	PROCESS(state_reg)
+	BEGIN
+		mostrar <= '1';
+		CASE (state_reg) IS
+			WHEN "00000" => enabler1 <= '1';
+								 lerMem(0) <= '1';
+			
+			WHEN "00001" => enabler1 <= '0';
+								 lerMem(0) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+								 
+			
+			WHEN "00010" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 selMult <= '0';
+								 enabler1 <= '1';
+								 lerMem(1) <= '1';
+								 selMult <= '1';
+			
+			WHEN "00011" => enabler1 <= '0';
+								 lerMem(1) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+								 
+			WHEN "00100" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(2) <= '1';
+								 
+			When "00101" => enabler1 <= '0';
+								 lerMem(2) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+			
+			when "00110" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(3) <= '1';
+								 
+			when "00111" => enabler1 <= '0';
+								 lerMem(3) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+			
+			when "01000" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(4) <= '1';
+								 
+			when "01001" => enabler1 <= '0';
+								 lerMem(4) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+			
+			when "01010" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(5) <= '1';
+					
+			when "01011" => enabler1 <= '0';
+								 lerMem(5) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+			
+			when "01100" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(6) <= '1';
+								 
+			when "01101" => enabler1 <= '0';
+								 lerMem(6) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+			
+			when "01110" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(7) <= '1';
+								 
+			when "01111" => enabler1 <= '0';
+								 lerMem(7) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+			
+			when "10000" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(8) <= '1';
+								 
+			when "10001" => enabler1 <= '0';
+								 lerMem(8) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+
+			when "10010" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 enabler1 <= '1';
+								 lerMem(9) <= '1';
+								 
+			when "10011" => enabler1 <= '0';
+								 lerMem(9) <= '0';
+								 enableMaior <= '1';
+								 enableMenor <= '1';
+								 enableSoma <= '1';
+								 
+			when "10100" => 
+								 enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 
+								 
+			When others => enableMaior <= '0';
+								 enableMenor <= '0';
+								 enableSoma <= '0';
+								 mostrar <= '0';
+								 enabler1 <= '0';
+								 lerMem <= "0000000000";
+								 
+			end case;		
+	END PROCESS;
+END arch;
