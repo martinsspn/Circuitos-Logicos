@@ -4,10 +4,9 @@ USE IEEE.std_logic_unsigned.ALL;
 ENTITY po IS
 PORT(e1: IN BIT_VECTOR(7 DOWNTO 0);
 	  enabler1 : IN BIT;
-	  enableSoma : IN BIT;
 	  enableQTD : IN BIT;
-	  enableDivisao : IN BIT;
 	  tx : IN BIT;
+	  media : IN BIT_VECTOR(7 downto 0);
 	  clk : IN BIT;
 	  maior : OUT BIT_VECTOR(7 DOWNTO 0);
 	  menor : out BIT_VECTOR(7 DOWNTO 0);
@@ -25,7 +24,8 @@ END COMPONENT;
 
 COMPONENT somador IS
 GENERIC(W : NATURAL := 8);
-PORT (a, b : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0); -- data inputs
+PORT (a : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0); -- data inputs
+		c : IN BIT;
 		s : OUT STD_LOGIC_VECTOR(W-1 DOWNTO 0)); -- data output
 END COMPONENT;
 
@@ -43,24 +43,9 @@ PORT (a, b : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0); -- data inputs
 		lt : OUT BIT); -- a < b
 END COMPONENT;
 
-COMPONENT divisor IS
-PORT(a : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	  s : OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
-END COMPONENT;
 
-COMPONENT multplex IS
-PORT(A, B : IN BIT_VECTOR(7 DOWNTO 0);
-	  sel1 : IN BIT;
-	  S : OUT BIT_VECTOR(7 DOWNTO 0));
-END COMPONENT;
-
-COMPONENT enableQuantidade is
-port(a, b : in bit;
-	  s : out bit);
-end COMPONENT;
-
-SIGNAL ar, br, cr, dr, er, fr, soma, divisao, smaior, smenor, sDivisao, sMult, qtd : BIT_VECTOR(7 DOWNTO 0);
-SIGNAL compMaior, compMenor, eM, enQTD : BIT; 
+SIGNAL ar, br, smaior, smenor, qtd : BIT_VECTOR(7 DOWNTO 0);
+SIGNAL compMaior, compMenor, com : BIT; 
 
 BEGIN
 	
@@ -71,30 +56,9 @@ BEGIN
 	cmpMenor : comparadorMenor PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(smenor), tx, compMenor);	
 	maior <= smaior;
 	menor <= smenor;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	rgSoma : reg_pp_Wbits PORT MAP(br, clk, enableSoma, soma);
-
-	
-	smd : somador PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(soma), to_bitvector(s) => br);
-	
-	rgDivisor : reg_pp_Wbits PORT MAP(divisao, clk, enableDivisao, sDivisao);
-	
-	div : divisor PORT MAP(to_stdlogicvector(soma), to_bitvector(s) => divisao);
-	
-	cmpM2 : comparadorMaior PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(sDivisao), eM);
-	
-	en : enableQuantidade PORT MAP(eM, enableQTD, enQTD);
-	
-	rg : reg_pp_Wbits PORT MAP(br, clk, eM, qtd);
-	
+	comp : comparadorMaior PORT MAP(to_stdlogicvector(ar), to_stdlogicvector(media), com);
+	smd : somador PORT MAP(to_stdlogicvector(qtd), com, to_bitvector(s) => br);
+	rg : reg_pp_Wbits PORT MAP(br, clk, enableQTD, qtd);
 	quantidade <= qtd;
 
 END arch;

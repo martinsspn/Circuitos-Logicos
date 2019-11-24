@@ -21,7 +21,6 @@ BEGIN
 		CASE (state_reg) IS
 			WHEN "000000" => enabler1 <= '1';
 								 lerMem(0) <= '1';
-								 enableSoma <= '1';
 								 tx <= '1';
 								 enableQTD <= '0';
 								 
@@ -94,9 +93,6 @@ BEGIN
 								 
 								 
 			when "010100" => enableRMenor <= '1';
-								 enableSoma <= '0';
-								 enableDivisao <= '1';
-								 
 								 
 			WHEN "010101" => enabler1 <= '1';
 								 lerMem(0) <= '1';

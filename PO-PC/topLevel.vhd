@@ -18,21 +18,18 @@ COMPONENT pc IS
 PORT(state_reg : IN BIT_VECTOR(5 DOWNTO 0);
 	  lerMem : OUT BIT_VECTOR(9 DOWNTO 0);
 	  enabler1 : OUT BIT;
-	  enableSoma : OUT BIT;
 	  tx : OUT BIT;
 	  enableQTD : OUT BIT;
 	  enableRMaior : OUT BIT;
 	  enableRMenor : OUT BIT;
-	  enableRQTD : OUT BIT;
-	  enableDivisao : OUT BIT);
+	  enableRQTD : OUT BIT);
 END COMPONENT;
 
 COMPONENT po IS
 PORT(e1: IN BIT_VECTOR(7 DOWNTO 0);
 	  enabler1 : IN BIT;
-	  enableSoma : IN BIT;
 	  enableQTD : IN BIT;
-	  enableDivisao : IN BIT;
+	  media : IN BIT_VECTOR(7 downto 0);
 	  tx : IN BIT;
 	  clk : IN BIT;
 	  maior : OUT BIT_VECTOR(7 DOWNTO 0);
@@ -59,11 +56,16 @@ PORT (d : IN BIT_VECTOR(7 DOWNTO 0);-- data input
 		q : OUT BIT_VECTOR(7 DOWNTO 0));-- data output
 END COMPONENT;
 
+component media is
+port(e0, e1, e2, e3, e4, e5, e6, e7, e8, e9 : IN BIT_VECTOR(7 DOWNTO 0);
+	  s1 : out bit_vector(7 downto 0));
+end component;
+
 
 SIGNAL a : BIT_VECTOR(5 DOWNTO 0);
 SIGNAL leitor : BIT_VECTOR(9 DOWNTO 0);
-SIGNAL enR1, enQTD, enRQTD, enSOMA, enMENOR, enMAIOR, enMENOR1, enDivisao : BIT;
-SIGNAL ML, m1, m2, m3 : BIT_VECTOR(7 DOWNTO 0);
+SIGNAL enR1, enQTD, enRQTD, enMENOR, enMAIOR : BIT;
+SIGNAL ML, MA, m1, m2, m3 : BIT_VECTOR(7 DOWNTO 0);
 SIGNAL t : BIT;
 
 
@@ -82,11 +84,11 @@ BEGIN
 	mem(9) <= "00000111";
 
 	
-	
+	md : media port map(mem(0), mem(1), mem(2), mem(3), mem(4), mem(5), mem(6), mem(7), mem(8), mem(9), MA); 
 	ft : fte PORT MAP(clock, clearn, to_bitvector(state_reg) => a);
-	pc1 : pc PORT MAP(a, leitor, enR1, enSOMA, t, enQTD, enMAIOR, enMENOR, enRQTD, enDivisao);
+	pc1 : pc PORT MAP(a, leitor, enR1, t, enQTD, enMAIOR, enMENOR, enRQTD);
 	LM : leitorMemoria PORT MAP(mem(0), mem(1), mem(2), mem(3), mem(4), mem(5), mem(6), mem(7), mem(8), mem(9), leitor, ML);
-	po1 : po PORT MAP(ML, enR1, enSOMA, enQTD, enDivisao, t, clock, m1, m2, m3);
+	po1 : po PORT MAP(ML, enR1, enQTD, MA, t, clock, m1, m2, m3);
 	rMaior : reg_pp_Wbits PORT MAP(m1, clock, enMaior, maior);
 	rMenor : reg_pp_Wbits PORT MAP(m2, clock, enMenor, menor);
 	rgM : reg_pp_Wbits PORT MAP(m3, clock, enRQTD, qtdMaior);

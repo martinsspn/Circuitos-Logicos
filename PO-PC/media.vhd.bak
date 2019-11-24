@@ -1,0 +1,17 @@
+entity media is
+port(e0, e1, e2, e3, e4, e5, e6, e7, e8, e9 : IN BIT_VECTOR(7 DOWNTO 0);
+	  s1 : out bit_vector(7 downto 0);
+end media;
+
+architecture arch of media is
+
+signal x, y, z: std_logic_vector(15 downto 0);
+
+begin
+	
+	x <= to_stdlogicvector(e0) + to_stdlogicvector(e1) + to_stdlogicvector(e2) + to_stdlogicvector(e3) + to_stdlogicvector(e4) +
+	     to_stdlogicvector(e5) + to_stdlogicvector(e6) + to_stdlogicvector(e7) + to_stdlogicvector(e8) + to_stdlogicvector(e9);
+	y <= "1010";
+	z <= std_logic_vector(to_signed(to_integer(signed(x) / signed(y)), 16));
+	s1 <= z(7 downto 0);
+end arch;
